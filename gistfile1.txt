@@ -4,7 +4,7 @@ $wu | Set-Service -StartupType Manual | Stop-Service
 cinst DotNet4.5.1 -y
 if (Test-PendingReboot) { Invoke-Reboot }
 
-cinst vs2015.enterprise-iso -ia "/Features:'WebTools SQL'" -y
+cinst vs2015.enterprise-iso -ia "/Features:'WebToolsV1 TypeScriptV1 GitForWindowsV1 SQLV1 PowershellToolsV1 MDDJSCoreV1'" -y
 if (Test-PendingReboot) { Invoke-Reboot }
 
 $wu | Start-Service
