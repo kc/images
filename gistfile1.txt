@@ -31,8 +31,7 @@ cinst skillpipereader -y
  
 if (Test-PendingReboot) { Invoke-Reboot }
 cinst MsSqlServerSchoolSampleDatabase -y
-cinst EntityFrameworkPowerTools-VS2013 -y
-cinst ILSpy -version 2.3.0.1827 -y
+cinst ILSpy -version 2.3.1.1855 -y
 
 cinst git -y
 cinst poshgit -y
@@ -41,7 +40,7 @@ cinst git-credential-winstore -y
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Google\Chrome\Application\chrome.exe" -ErrorAction SilentlyContinue
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
-Install-ChocolateyPinnedTaskBarItem "$env:ChocolateyInstall\lib\ILSpy.2.3.0.1827\tools\ILSpy.exe" -ErrorAction SilentlyContinue
+Install-ChocolateyPinnedTaskBarItem "$env:ChocolateyInstall\lib\ILSpy.2.3.1.1855\tools\ILSpy.exe" -ErrorAction SilentlyContinue
 
 # Set the last used template on the New Project dialog in VS to the C# node
 New-Item -Path HKCU:\Software\Microsoft\VisualStudio\14.0 -Name NewProjectDialog  -ea SilentlyContinue
