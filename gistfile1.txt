@@ -47,3 +47,5 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\14.0\NewProjectDial
 Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\14.0\NewProjectDialog -Name LastUsedTemplateNodeProject -Value "Templates\Visual C#"
  
 Set-WindowsExplorerOptions -EnableShowFileExtensions
+
+shutdown /s /hybrid /t 300
