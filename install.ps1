@@ -23,7 +23,12 @@ cinst googlechrome -y
 cinst 7zip -y
 cinst sumatrapdf.install -y
 cinst IIS-WebServerRole -source windowsfeatures
- 
+
+#Enable ASP.NET on win 2012/8
+cinst IIS-NetFxExtensibility45 -source WindowsFeatures
+cinst NetFx4Extended-ASPNET45 -source WindowsFeatures
+cinst IIS-ASPNet45 -source WindowsFeatures
+    
 cinst WordViewer -y
 cinst PowerPointViewer -y
 cinst FileFormatConverters -y
