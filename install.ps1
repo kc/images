@@ -22,7 +22,11 @@ if (Test-PendingReboot) { Invoke-Reboot }
 cinst googlechrome -y
 cinst 7zip -y
 cinst sumatrapdf.install -y
-cinst IIS-WebServerRole -source windowsfeatures
+
+#Enable Web Services
+cinst IIS-WebServerRole -source WindowsFeatures
+cinst IIS-ISAPIFilter -source WindowsFeatures
+cinst IIS-ISAPIExtensions -source WindowsFeatures
 
 #Enable ASP.NET on win 2012/8
 cinst IIS-NetFxExtensibility45 -source WindowsFeatures
