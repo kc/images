@@ -39,7 +39,7 @@ cinst FileFormatConverters -y
 cinst skillpipereader -y
  
 if (Test-PendingReboot) { Invoke-Reboot }
-cinst MsSqlServerSchoolSampleDatabase -y
+cinst MsSqlServerSchoolSampleDatabase -version 1.0.6 -y
 cinst ILSpy -version 2.3.1.1855 -y
 
 cinst git -y
