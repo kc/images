@@ -57,4 +57,10 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\14.0\NewProjectDial
  
 Set-WindowsExplorerOptions -EnableShowFileExtensions
 
+# http://support.microsoft.com/kb/328010
+New-Item HKLM:\SOFTWARE\Policies\Microsoft\Windows -Name WindowsUpdate
+New-Item HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate -Name AU
+New-ItemProperty HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name NoAutoUpdate -Value 1
+
+
 shutdown /s /hybrid /t 300
