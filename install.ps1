@@ -32,6 +32,17 @@ cinst IIS-ISAPIExtensions -source WindowsFeatures
 cinst IIS-NetFxExtensibility45 -source WindowsFeatures
 cinst NetFx4Extended-ASPNET45 -source WindowsFeatures
 cinst IIS-ASPNet45 -source WindowsFeatures
+cinst WCF-Services45 -source WindowsFeatures
+
+#Enable WCF in IIS
+cinst WCF-HTTP-Activation -source WindowsFeatures
+cinst WCF-NonHTTP-Activation -source WindowsFeatures
+cinst WCF-HTTP-Activation45 -source WindowsFeatures
+cinst WCF-TCP-Activation45 -source WindowsFeatures
+cinst WCF-Pipe-Activation45 -source WindowsFeatures    
+cinst WCF-MSMQ-Activation45 -source WindowsFeatures
+cinst WCF-TCP-PortSharing45 -source WindowsFeatures
+cinst WCF-HTTP-Activation45 -source WindowsFeatures
     
 cinst WordViewer -y
 cinst PowerPointViewer -y
