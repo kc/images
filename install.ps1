@@ -75,7 +75,7 @@ if (!(gi HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate -ea SilentlyCon
 if (!(gi HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -ea SilentlyContinue)) {
     New-Item HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate -Name AU
 }
-if (!(gi HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU\Name\NoAutoUpdate -ea SilentlyContinue)) {
+if (!(gi HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU\NoAutoUpdate -ea SilentlyContinue)) {
     New-ItemProperty HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name NoAutoUpdate -Value 1
 } else {
     Set-ItemProperty HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name NoAutoUpdate -Value 1
