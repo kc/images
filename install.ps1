@@ -72,7 +72,7 @@ Set-WindowsExplorerOptions -EnableShowFileExtensions
 if (!(gi HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate -ea SilentlyContinue)) {
     New-Item HKLM:\SOFTWARE\Policies\Microsoft\Windows -Name WindowsUpdate
 }
-if (!(giHKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -ea SilentlyContinue)) {
+if (!(gi HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -ea SilentlyContinue)) {
     New-Item HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate -Name AU
 }
 if (!(gi HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name NoAutoUpdate -ea SilentlyContinue)) {
