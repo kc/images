@@ -74,4 +74,6 @@ New-Item HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate -Name AU  -ea S
 New-ItemProperty HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name NoAutoUpdate -Value 1 -ea SilentlyContinue
 Set-ItemProperty HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name NoAutoUpdate -Value 1
 
+# Set the display to turn off after 1 hour
+powercfg -x monitor-timeout-ac 60
 shutdown /s /hybrid /t 300
