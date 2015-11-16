@@ -55,7 +55,7 @@ cinst ILSpy -version 2.3.1.1855 -y
 
 cinst git -y
 cinst poshgit -y
-cinst git-credential-winstore -y
+#cinst git-credential-winstore -y
  
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
