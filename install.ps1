@@ -54,6 +54,7 @@ cinst MsSqlServerSchoolSampleDatabase -version 1.0.6 -y
 cinst ILSpy -version 2.3.1.1855 -y
 
 cinst git -y
+setx PATH "$env:Path;$env:ProgramFiles\git\cmd"
 cinst poshgit -y
 choco install gcm -pre -y
  
