@@ -66,8 +66,6 @@ New-Item -Path HKCU:\Software\Microsoft\VisualStudio\14.0 -Name NewProjectDialog
 Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\14.0\NewProjectDialog -Name LastUsedTemplateNameProject -Value "Console Application"
 Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\14.0\NewProjectDialog -Name LastUsedTemplateNodeProject -Value "Templates\Visual C#"
  
-Set-WindowsExplorerOptions -EnableShowFileExtensions
-
 # http://support.microsoft.com/kb/328010
 New-Item HKLM:\SOFTWARE\Policies\Microsoft\Windows -Name WindowsUpdate -ea SilentlyContinue
 New-Item HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate -Name AU  -ea SilentlyContinue
@@ -79,3 +77,5 @@ $wu | Set-Service -StartupType Disabled
 # Set the display to turn off after 1 hour
 powercfg -x monitor-timeout-ac 60
 shutdown /s /hybrid /t 300
+
+Set-WindowsExplorerOptions -EnableShowFileExtensions
