@@ -7,68 +7,70 @@ New-Item HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate -Name AU  -ea S
 New-ItemProperty HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name NoAutoUpdate -Value 1 -ea SilentlyContinue
 Set-ItemProperty HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name NoAutoUpdate -Value 1
 
-cinst DotNet4.5.1 -y
+choco install DotNet4.5.1 -y
 if (Test-PendingReboot) { Invoke-Reboot }
 
-cinst vs2015.enterprise-iso -ia "/Features:'WebToolsV1 TypeScriptV1 GitForWindowsV1 SQLV1 PowershellToolsV1 MDDJSCoreV1'" -y
+choco install vs2015.enterprise-iso -ia "/Features:'WebToolsV1 TypeScriptV1 GitForWindowsV1 SQLV1 PowershellToolsV1 MDDJSCoreV1'" -y
 if (Test-PendingReboot) { Invoke-Reboot }
 
 $wu | Start-Service
-cinst DotNet3.5 -y
-cinst powershell -y
+choco install DotNet3.5 -y
+choco install powershell -y
 $wu | Stop-Service
 $wu | Set-Service -StartupType Disabled
 
 if (Test-PendingReboot) { Invoke-Reboot }
 
-cinst MsSqlServer2014Express -y -version 12.0.2000.8
+choco install MsSqlServer2014Express -y -version 12.0.2000.8
 if (Test-PendingReboot) { Invoke-Reboot }
 
-cinst MsSqlServerManagementStudio2014Express -y -version 12.0.2000.8
+choco install MsSqlServerManagementStudio2014Express -y -version 12.0.2000.8
 if (Test-PendingReboot) { Invoke-Reboot }
 
-cinst googlechrome -y
-cinst 7zip -y
-cinst sumatrapdf.install -y
+choco install googlechrome -y
+choco install 7zip -y
+choco install sumatrapdf.install -y
 
 #Enable Web Services
-cinst IIS-WebServerRole -source WindowsFeatures
-cinst IIS-ISAPIFilter -source WindowsFeatures
-cinst IIS-ISAPIExtensions -source WindowsFeatures
+choco install IIS-WebServerRole -source WindowsFeatures
+choco install IIS-ISAPIFilter -source WindowsFeatures
+choco install IIS-ISAPIExtensions -source WindowsFeatures
 
 #Enable ASP.NET on win 2012/8
-cinst IIS-NetFxExtensibility45 -source WindowsFeatures
-cinst NetFx4Extended-ASPNET45 -source WindowsFeatures
-cinst IIS-ASPNet45 -source WindowsFeatures
-cinst WCF-Services45 -source WindowsFeatures
+choco install IIS-NetFxExtensibility45 -source WindowsFeatures
+choco install NetFx4Extended-ASPNET45 -source WindowsFeatures
+choco install IIS-ASPNet45 -source WindowsFeatures
+choco install WCF-Services45 -source WindowsFeatures
 
 #Enable WCF in IIS
-cinst WCF-HTTP-Activation -source WindowsFeatures
-cinst WCF-NonHTTP-Activation -source WindowsFeatures
-cinst WCF-HTTP-Activation45 -source WindowsFeatures
-cinst WCF-TCP-Activation45 -source WindowsFeatures
-cinst WCF-Pipe-Activation45 -source WindowsFeatures    
-cinst WCF-MSMQ-Activation45 -source WindowsFeatures
-cinst WCF-TCP-PortSharing45 -source WindowsFeatures
-cinst WCF-HTTP-Activation45 -source WindowsFeatures
+choco install WCF-HTTP-Activation -source WindowsFeatures
+choco install WCF-NonHTTP-Activation -source WindowsFeatures
+choco install WCF-HTTP-Activation45 -source WindowsFeatures
+choco install WCF-TCP-Activation45 -source WindowsFeatures
+choco install WCF-Pipe-Activation45 -source WindowsFeatures    
+choco install WCF-MSMQ-Activation45 -source WindowsFeatures
+choco install WCF-TCP-PortSharing45 -source WindowsFeatures
+choco install WCF-HTTP-Activation45 -source WindowsFeatures
     
-cinst WordViewer -y
-cinst PowerPointViewer -y
-cinst FileFormatConverters -y
-cinst skillpipereader -y
+choco install WordViewer -y
+choco install PowerPointViewer -y
+choco install FileFormatConverters -y
+choco install skillpipereader -y
  
 if (Test-PendingReboot) { Invoke-Reboot }
-cinst MsSqlServerSchoolSampleDatabase -version 1.0.6 -y
-cinst ILSpy -version 2.3.1.1855 -y
+choco install MsSqlServerSchoolSampleDatabase -version 1.0.6 -y
+choco install ILSpy -y
 
-cinst git -y
+choco install git -y
 setx PATH "$env:Path;$env:ProgramFiles\git\cmd"
-cinst poshgit -y
-choco install gcm -pre -y
+choco install poshgit -y
+choco install install gcm -pre -y
  
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
-Install-ChocolateyPinnedTaskBarItem "$env:ChocolateyInstall\lib\ILSpy.2.3.1.1855\tools\ILSpy.exe" -ErrorAction SilentlyContinue
+
+$ilspy = gci -Path "$env:ChocolateyInstall\lib\ILSpy*\tools\ILSpy.exe" | select -ExpandProperty FullName
+Install-ChocolateyPinnedTaskBarItem $ilspy -ErrorAction SilentlyContinue
 
 # Set the last used template on the New Project dialog in VS to the C# node
 New-Item -Path HKCU:\Software\Microsoft\VisualStudio\14.0 -Name NewProjectDialog  -ea SilentlyContinue
