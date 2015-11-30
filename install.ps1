@@ -32,25 +32,25 @@ choco install 7zip -y
 choco install sumatrapdf.install -y
 
 #Enable Web Services
-choco install IIS-WebServerRole -source WindowsFeatures
-choco install IIS-ISAPIFilter -source WindowsFeatures
-choco install IIS-ISAPIExtensions -source WindowsFeatures
+choco install IIS-WebServerRole -source WindowsFeatures -y
+choco install IIS-ISAPIFilter -source WindowsFeatures -y
+choco install IIS-ISAPIExtensions -source WindowsFeatures -y
 
 #Enable ASP.NET on win 2012/8
-choco install IIS-NetFxExtensibility45 -source WindowsFeatures
-choco install NetFx4Extended-ASPNET45 -source WindowsFeatures
-choco install IIS-ASPNet45 -source WindowsFeatures
-choco install WCF-Services45 -source WindowsFeatures
+choco install IIS-NetFxExtensibility45 -source WindowsFeatures -y
+choco install NetFx4Extended-ASPNET45 -source WindowsFeatures -y
+choco install IIS-ASPNet45 -source WindowsFeatures -y
+choco install WCF-Services45 -source WindowsFeatures -y
 
 #Enable WCF in IIS
-choco install WCF-HTTP-Activation -source WindowsFeatures
-choco install WCF-NonHTTP-Activation -source WindowsFeatures
-choco install WCF-HTTP-Activation45 -source WindowsFeatures
-choco install WCF-TCP-Activation45 -source WindowsFeatures
-choco install WCF-Pipe-Activation45 -source WindowsFeatures    
-choco install WCF-MSMQ-Activation45 -source WindowsFeatures
-choco install WCF-TCP-PortSharing45 -source WindowsFeatures
-choco install WCF-HTTP-Activation45 -source WindowsFeatures
+choco install WCF-HTTP-Activation -source WindowsFeatures -y
+choco install WCF-NonHTTP-Activation -source WindowsFeatures -y
+choco install WCF-HTTP-Activation45 -source WindowsFeatures -y
+choco install WCF-TCP-Activation45 -source WindowsFeatures -y
+choco install WCF-Pipe-Activation45 -source WindowsFeatures -y  
+choco install WCF-MSMQ-Activation45 -source WindowsFeatures -y
+choco install WCF-TCP-PortSharing45 -source WindowsFeatures -y
+choco install WCF-HTTP-Activation45 -source WindowsFeatures -y
     
 choco install WordViewer -y
 choco install PowerPointViewer -y
