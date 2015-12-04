@@ -64,7 +64,7 @@ choco install ILSpy -y
 choco install git -y
 setx PATH "$env:Path;$env:ProgramFiles\git\cmd"
 choco install poshgit -y
-# choco install install gcm -pre -y
+choco install install gcm -version 1.0.0 -y
  
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
