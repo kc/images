@@ -20,5 +20,7 @@ choco install WordViewer -y
 choco install PowerPointViewer -y
 choco install FileFormatConverters -y
 
+Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\JetBrains\IntelliJ IDEA 15.0\bin\idea.exe" -ErrorAction SilentlyContinue
+Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Atlassian\SourceTree\SourceTree.exe" -ErrorAction SilentlyContinue
 
 Set-WindowsExplorerOptions -EnableShowFileExtensions
