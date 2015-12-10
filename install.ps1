@@ -3,7 +3,7 @@ setx PATH "$env:Path;$env:ProgramFiles\git\cmd"
 choco install poshgit -y
 choco install gcm -version 1.0.0 -y
 
-choco install javaruntime-platformspecific -y
+choco install javaruntime -y -version 7.0.75 
 choco install jdk8 -y
 choco install scala.portable -y
 choco install intellijidea-ultimate -y -version 15.0
