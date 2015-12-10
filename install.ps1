@@ -16,6 +16,6 @@ choco install sumatrapdf.install -y
 choco install WordViewer -y
 choco install PowerPointViewer -y
 choco install FileFormatConverters -y
-choco install skillpipereader -version 2.1.143  -y
+
 
 Set-WindowsExplorerOptions -EnableShowFileExtensions
