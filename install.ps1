@@ -3,6 +3,7 @@ setx PATH "$env:Path;$env:ProgramFiles\git\cmd"
 choco install poshgit -y
 choco install git-credential-manager-for-windows -y
 
+choco install soapui -y
 choco install javaruntime -y -version 7.0.75 
 choco install jdk8 -y
 choco install scala.install -y
