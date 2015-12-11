@@ -4,9 +4,9 @@ choco install poshgit -y
 choco install git-credential-manager-for-windows -y
 
 choco install soapui -y
-choco install javaruntime -y -version 7.0.75 
+#choco install javaruntime -y -version 7.0.75 
 choco install jdk8 -y
-choco install scala.install -y
+choco install scala.install -y -ignoreDependencies
 choco install intellijidea-ultimate -y -version 15.0
 choco install eclipse -y -version 4.5.20150719
 choco install tomcat -y 
