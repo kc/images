@@ -1,12 +1,6 @@
 $wu = Get-Service -Name wuauserv
 $wu | Set-Service -StartupType Manual | Stop-Service
 
-# http://support.microsoft.com/kb/328010
-New-Item HKLM:\SOFTWARE\Policies\Microsoft\Windows -Name WindowsUpdate -ea SilentlyContinue
-New-Item HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate -Name AU  -ea SilentlyContinue
-New-ItemProperty HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name NoAutoUpdate -Value 1 -ea SilentlyContinue
-Set-ItemProperty HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name NoAutoUpdate -Value 1
-
 choco install DotNet4.5.1 -y
 if (Test-PendingReboot) { Invoke-Reboot }
 
