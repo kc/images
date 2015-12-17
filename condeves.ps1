@@ -21,3 +21,7 @@ choco install octopusdeploy.tentacle -y
 
 choco install MsSqlServer2014Express -y
 & SQLCMD -S .\SQLEXPRESS -Q "CREATE DATABASE Octopus"
+
+choco install IIS-NetFxExtensibility45 -source WindowsFeatures -y
+choco install NetFx4Extended-ASPNET45 -source WindowsFeatures -y
+choco install IIS-ASPNet45 -source WindowsFeatures -y
