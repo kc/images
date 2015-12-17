@@ -1,3 +1,6 @@
+choco install git -y
+setx PATH "$env:Path;$env:ProgramFiles\git\cmd"
+
 if (!(Test-Path -Path C:\git\condev.git)) {
   New-Item -Path C:\git -ItemType directory -ea SilentlyContinue
   & git init C:\git\condev.git --bare
