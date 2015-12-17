@@ -18,7 +18,7 @@ $wu | Set-Service -StartupType Disabled
 
 if (Test-PendingReboot) { Invoke-Reboot }
 
-choco install MsSqlServer2014Express -y -version 12.0.2000.8
+choco install MsSqlServer2014Express -y
 if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install MsSqlServerManagementStudio2014Express -y -version 12.0.2000.8
