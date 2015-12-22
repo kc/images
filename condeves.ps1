@@ -7,7 +7,7 @@ if (!(Test-Path -Path C:\git\condev.git)) {
 }
 
 choco install jre8 -y -params "/exclude:32"
-choco install teamcity -version 9.1.4 -y
+choco install teamcity -y
 net start teamcity
 netsh advfirewall firewall add rule name="TeamCity" dir=in action=allow protocol=TCP localport=8111
 
