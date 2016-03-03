@@ -62,7 +62,8 @@ choco install MsSqlServerSchoolSampleDatabase -version 1.0.6 -y
 choco install ILSpy -y
 
 choco install git -y
-setx PATH "$env:Path;$env:ProgramFiles\git\cmd"
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
+
 choco install poshgit -y
 choco install git-credential-manager-for-windows -y
  
