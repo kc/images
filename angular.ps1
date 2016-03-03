@@ -3,11 +3,14 @@ $wu | Stop-Service
 $wu | Set-Service -StartupType Disabled
 
 choco install git -y
-setx PATH "$env:Path;$env:ProgramFiles\git\cmd"
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
+
 choco install poshgit -y
 choco install git-credential-manager-for-windows -y
  
 choco install nodejs -y
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
+
 npm install -g npm
 #npm install -g grunt-cli bower karma-cli yo generator-angular generator-protractor generator-karma
 #npm install jasmine karma phantomjs-prebuilt --save
