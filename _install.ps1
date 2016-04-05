@@ -55,7 +55,7 @@ choco install WCF-HTTP-Activation45 -source WindowsFeatures -y
 choco install WordViewer -y
 choco install PowerPointViewer -y
 choco install FileFormatConverters -y
-choco install skillpipereader -version 2.1.143  -y
+choco install skillpipereader -y
  
 if (Test-PendingReboot) { Invoke-Reboot }
 choco install MsSqlServerSchoolSampleDatabase -version 1.0.6 -y
