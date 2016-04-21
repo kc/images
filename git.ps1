@@ -7,6 +7,8 @@ choco install git-credential-manager-for-windows -y
 choco install sourcetree -y
 choco install kdiff3 -y
 
+choco install notepadplusplus.install -y
+
 choco install WordViewer -y
 choco install PowerPointViewer -y
 choco install FileFormatConverters -y
