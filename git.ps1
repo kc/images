@@ -23,4 +23,4 @@ Set-WindowsExplorerOptions -EnableShowFileExtensions
 powercfg -x monitor-timeout-ac 60
 
 #dism.exe /Online /Disable-Feature:Microsoft-Hyper-V /NoRestart
-Disable-WindowsOptionalFeature -FeatureName Microsoft-Hyper-V -Online
+Disable-WindowsOptionalFeature -FeatureName Microsoft-Hyper-V -Online -NoRestart
