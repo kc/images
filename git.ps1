@@ -20,4 +20,4 @@ Set-WindowsExplorerOptions -EnableShowFileExtensions
 # Set the display to turn off after 1 hour
 powercfg -x monitor-timeout-ac 60
 
-dism.exe /Online /Disable-Feature:Microsoft-Hyper-V
+dism.exe /Online /Disable-Feature:Microsoft-Hyper-V /NoRestart
