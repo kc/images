@@ -1,4 +1,6 @@
 $Boxstarter.RebootOk = $true
+$Boxstarter.NoPassword = $false
+$Boxstarter.AutoLogin = $true
 
 $wu = Get-Service -Name wuauserv
 $wu | Set-Service -StartupType Manual | Stop-Service
