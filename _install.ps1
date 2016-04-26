@@ -1,3 +1,5 @@
+$Boxstarter.RebootOk = $true
+
 $wu = Get-Service -Name wuauserv
 $wu | Set-Service -StartupType Manual | Stop-Service
 
