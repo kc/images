@@ -1,9 +1,5 @@
-$Boxstarter.RebootOk = $true
-$Boxstarter.NoPassword = $false
-$Boxstarter.AutoLogin = $true
-
 $wu = Get-Service -Name wuauserv
-#$wu | Set-Service -StartupType Manual | Stop-Service
+$wu | Set-Service -StartupType Manual | Stop-Service
 
 choco install DotNet4.5.1 -y
 if (Test-PendingReboot) { Invoke-Reboot }
@@ -18,11 +14,11 @@ if (Test-PendingReboot) { Invoke-Reboot }
 choco install aspnet5 -y -version 1.0.11123.0
 if (Test-PendingReboot) { Invoke-Reboot }
 
-#$wu | Start-Service
+$wu | Start-Service
 choco install DotNet3.5 -y
 choco install powershell -y
-#$wu | Stop-Service
-#$wu | Set-Service -StartupType Disabled
+$wu | Stop-Service
+$wu | Set-Service -StartupType Disabled
 
 if (Test-PendingReboot) { Invoke-Reboot }
 
