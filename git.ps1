@@ -9,10 +9,6 @@ choco install kdiff3 -y
 
 choco install notepadplusplus.install -y
 
-choco install WordViewer -y
-choco install PowerPointViewer -y
-choco install FileFormatConverters -y
-
 choco install googlechrome -y
 choco install 7zip -y
 choco install sumatrapdf.install -y
@@ -22,5 +18,4 @@ Set-WindowsExplorerOptions -EnableShowFileExtensions
 # Set the display to turn off after 1 hour
 powercfg -x monitor-timeout-ac 60
 
-#dism.exe /Online /Disable-Feature:Microsoft-Hyper-V /NoRestart
 Disable-WindowsOptionalFeature -FeatureName Microsoft-Hyper-V -Online -NoRestart
