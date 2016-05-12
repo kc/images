@@ -5,7 +5,7 @@ choco install Windows8.1-KB2919442 -y
 choco install Windows8.1-KB2919355 -y
 if (Test-PendingReboot) { Invoke-Reboot }
 
-choco install VisualStudio2015Enterprise -params "/layout .\VS2015" -ia "/InstallSelectableItems XamarinVSV1"
+choco install VisualStudio2015Enterprise -params "/layout .\VS2015" -ia "/InstallSelectableItems CrossPlatformMobileDevelopment_Group"
 if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install googlechrome -y
