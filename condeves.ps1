@@ -8,12 +8,16 @@ if (!(Test-Path -Path C:\git\condev.git)) {
 
 choco install jre8 -y -params "/exclude:32"
 choco install teamcity -y
+
 Get-Service -Name teamcity | Start-Service
-New-NetFirewallRule -DisplayName TeamCity -Direction Inbound -Action Allow -Protocol "TCP" -LocalPort 8111
+if (!(Get-NetFirewallRule -DisplayName TeamCity)) {
+  New-NetFirewallRule -DisplayName TeamCity -Direction Inbound -Action Allow -Protocol "TCP" -LocalPort 8111
+}
 
 $url = "http://localhost:8111"
-Write-Host "Configure TeamCity on $url"
-$x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+$url | clip
+Write-Host "Configure TeamCity on $url (it's on the clipboard already)"
+$host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
 choco install teamcityagent -y -params "serverurl=$url"
 choco install octopusdeploy -y
