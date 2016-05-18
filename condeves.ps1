@@ -8,8 +8,8 @@ if (!(Test-Path -Path C:\git\condev.git)) {
 
 choco install jre8 -y -params "/exclude:32"
 choco install teamcity -y
-net start teamcity
-netsh advfirewall firewall add rule name="TeamCity" dir=in action=allow protocol=TCP localport=8111
+Get-Service -Name teamcity | Start-Service
+New-NetFirewallRule -DisplayName TeamCity -Direction Inbound -Action Allow -Protocol "TCP" -LocalPort 8111
 
 $url = "http://localhost:8111"
 Write-Host "Configure TeamCity on $url"
