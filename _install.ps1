@@ -11,9 +11,6 @@ if (Test-PendingReboot) { Invoke-Reboot }
 choco install VisualStudio2015Enterprise -params "/layout .\VS2015" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y -source https://myget.org/F/riezebosch/api/v2
 if (Test-PendingReboot) { Invoke-Reboot }
 
-choco install aspnet5 -y -version 1.0.11123.0
-if (Test-PendingReboot) { Invoke-Reboot }
-
 $wu | Start-Service
 choco install DotNet3.5 -y
 choco install powershell -y
