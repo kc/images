@@ -25,7 +25,7 @@ choco install R.Project -y
 choco install R.Studio -y
 choco install jdk8 -y
 choco install scala.install -y -ignoreDependencies
-
+choco install imagemagick.app -y
 Install-ChocolateyZipPackage "spark-notebook" "https://s3.eu-central-1.amazonaws.com/spark-notebook/zip/spark-notebook-0.6.2-scala-2.10.4-spark-1.6.0-hadoop-2.2.0.zip?max-keys=100000" "C:\spark"
  
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
