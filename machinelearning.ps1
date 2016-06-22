@@ -7,7 +7,7 @@ if (Test-PendingReboot) { Invoke-Reboot }
 choco install Windows81-KB2919442 -y -source https://myget.org/F/riezebosch/api/v2
 choco install Windows81-KB2919355 -y -source https://myget.org/F/riezebosch/api/v2
 
-choco install VisualStudio2015Enterprise -params "/layout .\VS2015" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y -source https://myget.org/F/riezebosch/api/v2
+choco install VisualStudio2015Enterprise -params "/layout .\VS2015" -ia "/InstallSelectableItems WebTools;SQL" -y -source https://myget.org/F/riezebosch/api/v2
 if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install googlechrome -y
