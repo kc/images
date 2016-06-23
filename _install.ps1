@@ -9,6 +9,7 @@ choco install Windows81-KB2919355 -y -source https://myget.org/F/riezebosch/api/
 if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install VisualStudio2015Enterprise -params "/layout .\VS2015" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y -source https://myget.org/F/riezebosch/api/v2
+Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 if (Test-PendingReboot) { Invoke-Reboot }
 
 $wu | Start-Service
@@ -23,6 +24,7 @@ choco install MsSqlServer2014Express -y
 if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install MsSqlServerManagementStudio2014Express -y
+Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
 if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install googlechrome -y
@@ -57,7 +59,10 @@ choco install skillpipereader -y
  
 if (Test-PendingReboot) { Invoke-Reboot }
 choco install MsSqlServerSchoolSampleDatabase -version 1.0.6 -y
+
 choco install ILSpy -y
+$ilspy = gci -Path "$env:ChocolateyInstall\lib\ILSpy*\tools\ILSpy.exe" | select -ExpandProperty FullName
+Install-ChocolateyPinnedTaskBarItem $ilspy -ErrorAction SilentlyContinue
 
 choco install git -y
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
@@ -65,12 +70,6 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
 choco install poshgit -y
 choco install git-credential-manager-for-windows -y
  
-Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
-Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
-
-$ilspy = gci -Path "$env:ChocolateyInstall\lib\ILSpy*\tools\ILSpy.exe" | select -ExpandProperty FullName
-Install-ChocolateyPinnedTaskBarItem $ilspy -ErrorAction SilentlyContinue
-
 # Set the last used template on the New Project dialog in VS to the C# node
 New-Item -Path HKCU:\Software\Microsoft\VisualStudio\14.0 -Name NewProjectDialog  -ea SilentlyContinue
 Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\14.0\NewProjectDialog -Name LastUsedTemplateNameProject -Value "Console Application"
@@ -80,5 +79,3 @@ Set-WindowsExplorerOptions -EnableShowFileExtensions
 
 # Set the display to turn off after 1 hour
 powercfg -x monitor-timeout-ac 60
-
-
