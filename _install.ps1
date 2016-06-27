@@ -77,5 +77,7 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\14.0\NewProjectDial
 
 Set-WindowsExplorerOptions -EnableShowFileExtensions
 
-# Set the display to turn off after 1 hour
-powercfg -x monitor-timeout-ac 60
+if ($env:COMPUTERNAME -match "docent.") {
+    # Set the display to turn off after 1 hour
+    powercfg -x monitor-timeout-ac 60
+}
