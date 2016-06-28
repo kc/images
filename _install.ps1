@@ -1,16 +1,20 @@
+$myfeed = "https://myget.org/F/riezebosch"
+
 $wu = Get-Service -Name wuauserv
 $wu | Set-Service -StartupType Manual | Stop-Service
 
 choco install DotNet4.5.1 -y
 if (Test-PendingReboot) { Invoke-Reboot }
 
-choco install Windows81-KB2919442 -y -source https://myget.org/F/riezebosch/api/v2
-choco install Windows81-KB2919355 -y -source https://myget.org/F/riezebosch/api/v2
+choco install Windows81-KB2919442 -y --source $myfeed
+choco install Windows81-KB2919355 -y --source $myfeed
 if (Test-PendingReboot) { Invoke-Reboot }
 
-choco install VisualStudio2015Enterprise -params "/layout C:\VPC_Images\VS2015" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y -source https://myget.org/F/riezebosch/api/v2
+choco install VisualStudio2015Enterprise -params "/layout C:\VPC_Images\VS2015" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --source $myfeed
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 if (Test-PendingReboot) { Invoke-Reboot }
+
+choco install dotnetcore-vs --source $myfeed
 
 $wu | Start-Service
 choco install DotNet3.5 -y
@@ -58,7 +62,7 @@ choco install FileFormatConverters -y
 choco install skillpipereader -y
  
 if (Test-PendingReboot) { Invoke-Reboot }
-choco install MsSqlServerSchoolSampleDatabase -version 1.0.6 -y
+choco install MsSqlServerSchoolSampleDatabase -y --source $myfeed
 
 choco install ILSpy -y
 $ilspy = gci -Path "$env:ChocolateyInstall\lib\ILSpy*\tools\ILSpy.exe" | select -ExpandProperty FullName
