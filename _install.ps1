@@ -14,7 +14,7 @@ choco install VisualStudio2015Enterprise -params "/layout C:\VPC_Images\VS2015" 
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 if (Test-PendingReboot) { Invoke-Reboot }
 
-choco install dotnetcore-vs --source $myfeed
+choco install dotnetcore-vs -y -pre --source $myfeed
 
 $wu | Start-Service
 choco install DotNet3.5 -y
