@@ -24,11 +24,11 @@ $wu | Set-Service -StartupType Disabled
 
 if (Test-PendingReboot) { Invoke-Reboot }
 
-choco install MsSqlServer2014Express -y
+choco install sql-server-express -y --source $myfeed
 if (Test-PendingReboot) { Invoke-Reboot }
 
-choco install MsSqlServerManagementStudio2014Express -y
-Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
+choco install sql-server-management-studio -y
+Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
 if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install googlechrome -y
