@@ -1,8 +1,8 @@
 choco install DotNet4.5.1 -y
 if (Test-PendingReboot) { Invoke-Reboot }
 
-choco install Windows81-KB2919442 -y
-choco install Windows81-KB2919355 -y
+choco install KB2919442 -y
+choco install KB2919355 -y
 if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install VisualStudio2015Enterprise -params "/layout .\VS2015" -ia "/InstallSelectableItems CrossPlatformMobileDevelopment_Group" -source https://myget.org/F/riezebosch/api/v2

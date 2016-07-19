@@ -6,8 +6,8 @@ $wu | Set-Service -StartupType Manual | Stop-Service
 choco install DotNet4.5.1 -y
 if (Test-PendingReboot) { Invoke-Reboot }
 
-choco install Windows81-KB2919442 -y --source $myfeed
-choco install Windows81-KB2919355 -y --source $myfeed
+choco install KB2919442 -y --source $myfeed
+choco install KB2919355 -y --source $myfeed
 if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install VisualStudio2015Enterprise -params "/layout C:\VPC_Images\VS2015" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --source $myfeed

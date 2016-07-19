@@ -4,8 +4,8 @@ $wu | Set-Service -StartupType Manual | Stop-Service
 choco install DotNet4.5.1 -y
 if (Test-PendingReboot) { Invoke-Reboot }
 
-choco install Windows81-KB2919442 -y -source https://myget.org/F/riezebosch/api/v2
-choco install Windows81-KB2919355 -y -source https://myget.org/F/riezebosch/api/v2
+choco install KB2919442 -y -source https://myget.org/F/riezebosch/api/v2
+choco install KB2919355 -y -source https://myget.org/F/riezebosch/api/v2
 
 choco install VisualStudio2015Enterprise -params "/layout .\VS2015" -ia "/InstallSelectableItems WebTools;SQL" -y -source https://myget.org/F/riezebosch/api/v2
 if (Test-PendingReboot) { Invoke-Reboot }
