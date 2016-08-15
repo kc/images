@@ -8,11 +8,9 @@ if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install KB2919442 -y --source $myfeed
 choco install KB2919355 -y --source $myfeed
-if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install VisualStudio2015Enterprise -params "/layout C:\VPC_Images\VS2015" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --source $myfeed
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
-if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install dotnetcore-vs -y -pre --source $myfeed
 
@@ -22,15 +20,14 @@ choco install powershell -y
 $wu | Stop-Service
 $wu | Set-Service -StartupType Disabled
 
-if (Test-PendingReboot) { Invoke-Reboot }
-
 choco install vcredist2013 -y
+
+# dummy shutdown as a workaround for choco messing up the lastexitcode: https://github.com/chocolatey/choco/issues/610
+shutdown /r /t 315359999
 choco install sql-server-express -y --source $myfeed
-if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install sql-server-management-studio -y
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
-if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install googlechrome -y
 choco install 7zip -y
@@ -62,7 +59,6 @@ choco install PowerPointViewer -y
 choco install FileFormatConverters -y
 choco install skillpipereader -y
  
-if (Test-PendingReboot) { Invoke-Reboot }
 choco install MsSqlServerSchoolSampleDatabase -y --source $myfeed
 
 choco install ILSpy -y
