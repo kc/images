@@ -25,7 +25,7 @@ $wu | Set-Service -StartupType Disabled
 if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install vcredist2013 -y
-choco install sql-server-express -y --source $myfeed --ignore-package-exit-codes
+choco install sql-server-express -y --source $myfeed
 if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install sql-server-management-studio -y
