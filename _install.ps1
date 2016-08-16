@@ -9,7 +9,7 @@ if (Test-PendingReboot) { Invoke-Reboot }
 choco install KB2919442 -y --source $myfeed
 choco install KB2919355 -y --source $myfeed
 
-choco install VisualStudio2015Enterprise -params "/layout C:\VPC_Images\VS2015" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --source $myfeed
+choco install VisualStudio2015Enterprise --version 14.0.25420.1 -params "/layout C:\VPC_Images\VS2015" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --source $myfeed
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 
 choco install dotnetcore-vs -y -pre --source $myfeed

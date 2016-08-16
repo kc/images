@@ -7,7 +7,7 @@ if (Test-PendingReboot) { Invoke-Reboot }
 choco install KB2919442 -y -source https://myget.org/F/riezebosch/api/v2
 choco install KB2919355 -y -source https://myget.org/F/riezebosch/api/v2
 
-choco install VisualStudio2015Enterprise -params "/layout .\VS2015" -ia "/InstallSelectableItems WebTools;SQL" -y -source https://myget.org/F/riezebosch/api/v2
+choco install VisualStudio2015Enterprise --version 14.0.25420.1 -params "/layout .\VS2015" -ia "/InstallSelectableItems WebTools;SQL" -y -source https://myget.org/F/riezebosch/api/v2
 if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install googlechrome -y
