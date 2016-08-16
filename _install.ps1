@@ -22,10 +22,8 @@ $wu | Set-Service -StartupType Disabled
 
 choco install vcredist2013 -y
 
-# dummy shutdown as a workaround for choco messing up the lastexitcode: https://github.com/chocolatey/choco/issues/610
-shutdown /r /t 315359999
 choco install sql-server-express -y --source $myfeed
-
+choco install sql-server-express -y -n --source $myfeed #workaround for installation failure
 choco install sql-server-management-studio -y
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
 
