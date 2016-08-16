@@ -22,8 +22,11 @@ $wu | Set-Service -StartupType Disabled
 
 choco install vcredist2013 -y
 
+ # lousy workaround for unfairly installation failure
+if(Test-Path "$env:ChocolateyInstall\lib-bad\sql-server-express") {
+    choco install sql-server-express -y -n --source $myfeed
+}
 choco install sql-server-express -y --source $myfeed
-choco install sql-server-express -y -n --source $myfeed #workaround for installation failure
 choco install sql-server-management-studio -y
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
 
