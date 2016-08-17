@@ -9,10 +9,10 @@ if (Test-PendingReboot) { Invoke-Reboot }
 choco install KB2919442 -y --source $myfeed
 choco install KB2919355 -y --source $myfeed
 
-choco install VisualStudio2015Enterprise --version 14.0.25420.1 -params "/layout C:\VPC_Images\VS2015" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --source $myfeed
+$drive = (Mount-VHD "C:\VPC_Images\vs2015.vhdx" -Passthru -ea SilentlyContinue | Get-Disk | Get-Partition).DriveLetter
+choco install VisualStudio2015Enterprise --version 14.0.25420.1 -params "/layout $drive:\VS2015" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --source $myfeed
+choco install dotnetcore-vs -y -pre -params "/layout $drive:\dotnetcore-vs" --source $myfeed
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
-
-choco install dotnetcore-vs -y -pre -params "/layout C:\VPC_Images\dotnetcore-vs" --source $myfeed
 
 $wu | Start-Service
 choco install DotNet3.5 -y
