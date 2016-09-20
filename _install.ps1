@@ -6,8 +6,8 @@ $wu | Set-Service -StartupType Manual | Stop-Service
 choco install DotNet4.5.1 -y
 if (Test-PendingReboot) { Invoke-Reboot }
 
-choco install KB2919442 -y --source $myfeed
-choco install KB2919355 -y --source $myfeed
+choco install KB2919442 -y --source $myfeed --version 1.0.20160719
+choco install KB2919355 -y --source $myfeed --version 1.0.20160719
 
 $drive = (Mount-VHD "C:\VPC_Images\vs2015.vhdx" -Passthru -ea SilentlyContinue | Get-Disk | Get-Partition).DriveLetter
 choco install VisualStudio2015Enterprise --version 14.0.25420.1 -params "/layout $($drive):\" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --source $myfeed
