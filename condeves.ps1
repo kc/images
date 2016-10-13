@@ -23,7 +23,7 @@ choco install teamcityagent -y -params "serverurl=$url"
 choco install octopusdeploy -y
 choco install octopusdeploy.tentacle -y
 
-choco install MsSqlServer2014Express -y
+choco install sql-server-express -y
 & SQLCMD -S .\SQLEXPRESS -Q "CREATE DATABASE Octopus"
 
 choco install IIS-NetFxExtensibility45 -source WindowsFeatures -y
