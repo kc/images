@@ -1,2 +1,45 @@
+$myfeed = "https://myget.org/F/riezebosch"
+
+$wu = Get-Service -Name wuauserv
+$wu | Set-Service -StartupType Manual | Stop-Service
+
+choco install DotNet4.5.1 -y
+if (Test-PendingReboot) { Invoke-Reboot }
+
+choco install KB2919442 -y --source $myfeed --version 1.0.20160719
+choco install KB2919355 -y --source $myfeed --version 1.0.20160719
+
+$drive = (Mount-VHD "C:\VPC_Images\vs2015.vhdx" -Passthru -ea SilentlyContinue | Get-Disk | Get-Partition).DriveLetter
+choco install VisualStudio2015Enterprise --version 14.0.25420.1 -params "/layout $($drive):\" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --source $myfeed
+choco install dotnetcore-vs -y -pre --source $myfeed
+Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
+
+choco install googlechrome -y
+choco install 7zip -y
+choco install sumatrapdf.install -y
+
+choco install WordViewer -y
+choco install PowerPointViewer -y
+choco install FileFormatConverters -y
+
+choco install ILSpy -y
+$ilspy = gci -Path "$env:ChocolateyInstall\lib\ILSpy*\tools\ILSpy.exe" | select -ExpandProperty FullName
+Install-ChocolateyPinnedTaskBarItem $ilspy -ErrorAction SilentlyContinue
+
+choco install git -y
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
+
+# Set the last used template on the New Project dialog in VS to the C# node
+New-Item -Path HKCU:\Software\Microsoft\VisualStudio\14.0 -Name NewProjectDialog  -ea SilentlyContinue
+Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\14.0\NewProjectDialog -Name LastUsedTemplateNameProject -Value "Console Application"
+Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\14.0\NewProjectDialog -Name LastUsedTemplateNodeProject -Value "Templates\Visual C#"
+
+Set-WindowsExplorerOptions -EnableShowFileExtensions
+
+if ($env:COMPUTERNAME -match "docent.") {
+    # Set the display to turn off after 1 hour
+    powercfg -x monitor-timeout-ac 60
+}
+
 Install-ChocolateyVsixPackage SpecFlow https://visualstudiogallery.msdn.microsoft.com/c74211e7-cb6e-4dfa-855d-df0ad4a37dd6/file/160542/7/TechTalk.SpecFlow.Vs2015Integration.v2015.1.2.vsix
 choco install firefox -y
