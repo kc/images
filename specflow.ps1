@@ -9,25 +9,24 @@ if (Test-PendingReboot) { Invoke-Reboot }
 choco install KB2919442 -y --source $myfeed --version 1.0.20160719
 choco install KB2919355 -y --source $myfeed --version 1.0.20160719
 
-
 #mount the VHDX if possible
-if ($disk = Get-DiskImage -ImagePath "C:\VPC_Images\vs2015.vhdx" -ea SilentlyContinue) {
+$vhd = "C:\VPC_Images\vs2015.vhdx"
+if ($disk = $vhd | Get-DiskImage -ea SilentlyContinue) {
 	if (!($disk.Attached)) {
-		$disk = $disk | Mount-DiskImage -PassThru
+		$disk | Mount-DiskImage
+		$disk = $vhd | Get-DiskImage
 	}
+	
 	$drive = ($disk | Get-Disk | Get-Partition | Get-Volume).DriveLetter
 	$params = "/layout $($drive):\VS2015\"
 }
+
 choco install VisualStudio2015Enterprise --version 14.0.25420.1 -params "$params" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --source $myfeed
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 
 choco install googlechrome -y
 choco install 7zip -y
 choco install sumatrapdf.install -y
-
-choco install WordViewer -y
-choco install PowerPointViewer -y
-choco install FileFormatConverters -y
 
 choco install ILSpy -y
 $ilspy = gci -Path "$env:ChocolateyInstall\lib\ILSpy*\tools\ILSpy.exe" | select -ExpandProperty FullName
@@ -41,12 +40,11 @@ New-Item -Path HKCU:\Software\Microsoft\VisualStudio\14.0 -Name NewProjectDialog
 Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\14.0\NewProjectDialog -Name LastUsedTemplateNameProject -Value "Console Application"
 Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\14.0\NewProjectDialog -Name LastUsedTemplateNodeProject -Value "Templates\Visual C#"
 
-Set-WindowsExplorerOptions -EnableShowFileExtensions
+Install-ChocolateyVsixPackage SpecFlow https://visualstudiogallery.msdn.microsoft.com/c74211e7-cb6e-4dfa-855d-df0ad4a37dd6/file/160542/7/TechTalk.SpecFlow.Vs2015Integration.v2015.1.2.vsix
+choco install firefox -y
 
+Set-WindowsExplorerOptions -EnableShowFileExtensions
 if ($env:COMPUTERNAME -match "docent.") {
     # Set the display to turn off after 1 hour
     powercfg -x monitor-timeout-ac 60
 }
-
-Install-ChocolateyVsixPackage SpecFlow https://visualstudiogallery.msdn.microsoft.com/c74211e7-cb6e-4dfa-855d-df0ad4a37dd6/file/160542/7/TechTalk.SpecFlow.Vs2015Integration.v2015.1.2.vsix
-choco install firefox -y

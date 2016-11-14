@@ -5,10 +5,6 @@ choco install googlechrome -y
 choco install 7zip -y
 choco install sumatrapdf.install -y
 
-choco install WordViewer -y
-choco install PowerPointViewer -y
-choco install FileFormatConverters -y
- 
 choco install git -y
 setx PATH "$env:Path;$env:ProgramFiles\git\cmd"
 
@@ -22,6 +18,7 @@ Install-ChocolateyZipPackage "spark-notebook" "https://s3.eu-central-1.amazonaws
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles)\RStudio\bin\rstudio.exe" -ErrorAction SilentlyContinue
 
 Set-WindowsExplorerOptions -EnableShowFileExtensions
-
-# Set the display to turn off after 1 hour
-powercfg -x monitor-timeout-ac 60
+if ($env:COMPUTERNAME -match "docent.") {
+    # Set the display to turn off after 1 hour
+    powercfg -x monitor-timeout-ac 60
+}

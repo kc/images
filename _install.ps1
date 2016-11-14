@@ -4,16 +4,17 @@ $wu = Get-Service -Name wuauserv
 $wu | Set-Service -StartupType Manual | Stop-Service
 
 choco install DotNet4.5.1 -y
-if (Test-PendingReboot) { Invoke-Reboot }
-
 choco install KB2919442 -y --source $myfeed --version 1.0.20160719
 choco install KB2919355 -y --source $myfeed --version 1.0.20160719
 
 #mount the VHDX if possible
-if ($disk = Get-DiskImage -ImagePath "C:\VPC_Images\vs2015.vhdx" -ea SilentlyContinue) {
+$vhd = "C:\VPC_Images\vs2015.vhdx"
+if ($disk = $vhd | Get-DiskImage -ea SilentlyContinue) {
 	if (!($disk.Attached)) {
-		$disk = $disk | Mount-DiskImage -PassThru
+		$disk | Mount-DiskImage
+		$disk = $vhd | Get-DiskImage
 	}
+	
 	$drive = ($disk | Get-Disk | Get-Partition | Get-Volume).DriveLetter
 	$params = "/layout $($drive):\VS2015\"
 }
@@ -63,11 +64,7 @@ choco install WCF-MSMQ-Activation45 -source WindowsFeatures -y
 choco install WCF-TCP-PortSharing45 -source WindowsFeatures -y
 choco install WCF-HTTP-Activation45 -source WindowsFeatures -y
     
-choco install WordViewer -y
-choco install PowerPointViewer -y
-choco install FileFormatConverters -y
-choco install skillpipereader -y
- 
+choco install skillpipereader -y 
 choco install MsSqlServerSchoolSampleDatabase -y --source $myfeed
 
 choco install ILSpy -y
@@ -76,9 +73,6 @@ Install-ChocolateyPinnedTaskBarItem $ilspy -ErrorAction SilentlyContinue
 
 choco install git -y
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
-
-choco install poshgit -y
-choco install git-credential-manager-for-windows -y
  
 # Set the last used template on the New Project dialog in VS to the C# node
 New-Item -Path HKCU:\Software\Microsoft\VisualStudio\14.0 -Name NewProjectDialog  -ea SilentlyContinue
@@ -86,7 +80,6 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\14.0\NewProjectDial
 Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\14.0\NewProjectDialog -Name LastUsedTemplateNodeProject -Value "Templates\Visual C#"
 
 Set-WindowsExplorerOptions -EnableShowFileExtensions
-
 if ($env:COMPUTERNAME -match "docent.") {
     # Set the display to turn off after 1 hour
     powercfg -x monitor-timeout-ac 60

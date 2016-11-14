@@ -14,8 +14,9 @@ choco install 7zip -y
 choco install sumatrapdf.install -y
 
 Set-WindowsExplorerOptions -EnableShowFileExtensions
-
-# Set the display to turn off after 1 hour
-powercfg -x monitor-timeout-ac 60
+if ($env:COMPUTERNAME -match "docent.") {
+    # Set the display to turn off after 1 hour
+    powercfg -x monitor-timeout-ac 60
+}
 
 Disable-WindowsOptionalFeature -FeatureName Microsoft-Hyper-V -Online -NoRestart
