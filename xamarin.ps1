@@ -5,8 +5,16 @@ choco install KB2919442 -y
 choco install KB2919355 -y
 if (Test-PendingReboot) { Invoke-Reboot }
 
-$drive = (Mount-VHD "C:\VPC_Images\vs2015.vhdx" -Passthru -ea SilentlyContinue | Get-Disk | Get-Partition).DriveLetter
-choco install VisualStudio2015Enterprise --version 14.0.25420.1 -params "/layout $($drive):\VS2015" -ia "/InstallSelectableItems CrossPlatformMobileDevelopment_Group" -source https://myget.org/F/riezebosch/api/v2
+
+#mount the VHDX if possible
+if ($disk = Get-DiskImage -ImagePath "C:\VPC_Images\vs2015.vhdx" -ea SilentlyContinue) {
+	if (!($disk.Attached)) {
+		$disk = $disk | Mount-DiskImage -PassThru
+	}
+	$drive = ($disk | Get-Disk | Get-Partition | Get-Volume).DriveLetter
+	$params = "/layout $($drive):\VS2015\"
+}
+choco install VisualStudio2015Enterprise --version 14.0.25420.1 -params "$params" -ia "/InstallSelectableItems CrossPlatformMobileDevelopment_Group" -source https://myget.org/F/riezebosch/api/v2
 if (Test-PendingReboot) { Invoke-Reboot }
 
 choco install googlechrome -y

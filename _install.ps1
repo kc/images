@@ -12,13 +12,13 @@ choco install KB2919355 -y --source $myfeed --version 1.0.20160719
 #mount the VHDX if possible
 if ($disk = Get-DiskImage -ImagePath "C:\VPC_Images\vs2015.vhdx" -ea SilentlyContinue) {
 	if (!($disk.Attached)) {
-		$disk | Mount-DiskImage
+		$disk = $disk | Mount-DiskImage -PassThru
 	}
 	$drive = ($disk | Get-Disk | Get-Partition | Get-Volume).DriveLetter
 	$params = "/layout $($drive):\VS2015\"
 }
 
-choco install VisualStudio2015Enterprise --version 14.0.25420.1 -params $params -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --source $myfeed
+choco install VisualStudio2015Enterprise --version 14.0.25420.1 -params "$params" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --source $myfeed
 choco install dotnetcore-vs -y -pre --source $myfeed
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 
