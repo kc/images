@@ -20,7 +20,19 @@ if ($disk = $vhd | Get-DiskImage -ea SilentlyContinue) {
 }
 
 choco install VisualStudio2015Enterprise --version 14.0.25420.1 -params "$params" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --source $myfeed
-choco install dotnetcore-vs -y -pre --source $myfeed
+
+#mount the VHDX if possible
+$vhd = "C:\VPC_Images\netcore.vhdx"
+if ($disk = $vhd | Get-DiskImage -ea SilentlyContinue) {
+	if (!($disk.Attached)) {
+		$disk | Mount-DiskImage
+		$disk = $vhd | Get-DiskImage
+	}
+	
+	$drive = ($disk | Get-Disk | Get-Partition | Get-Volume).DriveLetter
+	$params = "/layout $($drive):\SDK\"
+}
+choco install dotnetcore-vs -params "$params" -y -pre --source $myfeed
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 
 $wu | Start-Service
