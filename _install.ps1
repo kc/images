@@ -8,10 +8,8 @@ choco install DotNet4.5.1 -y
 choco install KB2919442 -y --source $myfeed --version 1.0.20160719
 choco install KB2919355 -y --source $myfeed --version 1.0.20160719
 
-$params = "/layout ${cache}VS2015\"
+$params = "/layout ${cache}Layout\"
 choco install VisualStudio2015Enterprise --version 14.0.25420.1 -params "$params" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --source $myfeed
-
-$params = "/layout ${cache}VS2015DotNetCore\"
 choco install dotnetcore-vs -params "$params" -ia "SKIP_VSU_CHECK=1" -y -pre --source $myfeed
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 
