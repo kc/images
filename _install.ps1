@@ -32,7 +32,7 @@ if ($disk = $vhd | Get-DiskImage -ea SilentlyContinue) {
 	$drive = ($disk | Get-Disk | Get-Partition | Get-Volume).DriveLetter
 	$params = "/layout $($drive):\SDK\"
 }
-choco install dotnetcore-vs -params "$params" -y -pre --source $myfeed
+choco install dotnetcore-vs -params "$params" -ia "SKIP_VSU_CHECK=1" -y -pre --source $myfeed
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 
 $wu | Start-Service
