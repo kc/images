@@ -1,5 +1,5 @@
+. "C:\VPC_Images\Mount-InstallationCache.ps1"
 $myfeed = "https://myget.org/F/riezebosch"
-$cache = choco config get cacheLocation
 
 $wu = Get-Service -Name wuauserv
 $wu | Set-Service -StartupType Manual | Stop-Service
