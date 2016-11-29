@@ -1,4 +1,3 @@
-. "C:\VPC_Images\Mount-InstallationCache.ps1"
 $myfeed = "https://myget.org/F/riezebosch"
 
 $wu = Get-Service -Name wuauserv
@@ -8,12 +7,9 @@ choco install DotNet4.5.1 -y
 choco install KB2919442 -y --source $myfeed --version 1.0.20160719
 choco install KB2919355 -y --source $myfeed --version 1.0.20160719
 
-$params = "/layout $env:installationcache\VS2015\"
-choco install VisualStudio2015Enterprise --version 14.0.25420.1 -params "$params" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --source $myfeed
-
-$params = "/layout $env:installationcache\VS2015DotNetCore\"
-choco install dotnetcore-vs -params "$params" -ia "SKIP_VSU_CHECK=1" -y -pre --source $myfeed
+choco install VisualStudio2015Enterprise --version 14.0.25420.1 -params "/layout K:\VS2015\" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --source $myfeed
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
+choco install dotnetcore-vs -params "/layout K:\VS2015DotNetCore\" -ia "SKIP_VSU_CHECK=1" -y -pre --source $myfeed
 
 $wu | Start-Service
 choco install DotNet3.5 -y
