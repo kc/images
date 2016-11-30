@@ -9,19 +9,8 @@ if (Test-PendingReboot) { Invoke-Reboot }
 choco install KB2919442 -y --source $myfeed --version 1.0.20160719
 choco install KB2919355 -y --source $myfeed --version 1.0.20160719
 
-#mount the VHDX if possible
-$vhd = "C:\VPC_Images\vs2015.vhdx"
-if ($disk = $vhd | Get-DiskImage -ea SilentlyContinue) {
-	if (!($disk.Attached)) {
-		$disk | Mount-DiskImage
-		$disk = $vhd | Get-DiskImage
-	}
-	
-	$drive = ($disk | Get-Disk | Get-Partition | Get-Volume).DriveLetter
-	$params = "/layout $($drive):\VS2015\"
-}
-
-choco install VisualStudio2015Enterprise --version 14.0.25420.1 -params "$params" -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --source $myfeed
+$env:visualStudio:setupFolder = "K:\VS2015" 
+choco install VisualStudio2015Enterprise -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 
 choco install googlechrome -y
