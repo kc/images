@@ -4,12 +4,12 @@ $wu = Get-Service -Name wuauserv
 $wu | Set-Service -StartupType Manual | Stop-Service
 
 choco install DotNet4.5.1 -y
-choco install KB2919442 -y --source $myfeed --version 1.0.20160719
-choco install KB2919355 -y --source $myfeed --version 1.0.20160719
+choco install KB2919442 -y
+choco install KB2919355 -y
 
 
 $env:visualStudio:setupFolder = "K:\VS2015" 
-choco install VisualStudio2015Enterprise -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y
+choco install VisualStudio2015Enterprise -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --version "2015.03.02"
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 
 choco install dotnetcore-vs -params "/layout K:\VS2015DotNetCore\" -ia "SKIP_VSU_CHECK=1" -y -pre --source $myfeed
