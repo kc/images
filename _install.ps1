@@ -12,7 +12,7 @@ $env:visualStudio:setupFolder = "K:\VS2015"
 choco install VisualStudio2015Enterprise -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --version "2015.03.02"
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 
-choco install vcredist2013 -y
+choco install vcredist2015 -y
 choco install dotnetcore-vs -params "/layout K:\VS2015DotNetCore\" -ia "SKIP_VSU_CHECK=1" -y -pre --source $myfeed
 
 $wu | Start-Service
@@ -25,6 +25,8 @@ $wu | Set-Service -StartupType Disabled
 if(Test-Path "$env:ChocolateyInstall\lib-bad\sql-server-express") {
     choco install sql-server-express -y -n --source $myfeed
 }
+
+choco install vcredist2013 -y
 choco install sql-server-express -y --source $myfeed
 choco install sql-server-management-studio -y
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
