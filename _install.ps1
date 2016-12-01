@@ -17,7 +17,7 @@ choco install dotnetcore-vs -params "/layout K:\VS2015DotNetCore\" -ia "SKIP_VSU
 
 $wu | Start-Service
 choco install DotNet3.5 -y
-choco install powershell -y --allowemptychecksum
+choco install powershell -y --ignore-checksums
 $wu | Stop-Service
 $wu | Set-Service -StartupType Disabled
 
