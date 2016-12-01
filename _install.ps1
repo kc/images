@@ -17,7 +17,7 @@ choco install dotnetcore-vs -params "/layout K:\VS2015DotNetCore\" -ia "SKIP_VSU
 
 $wu | Start-Service
 choco install DotNet3.5 -y
-choco install powershell -y
+choco install powershell -y --allowemptychecksum
 $wu | Stop-Service
 $wu | Set-Service -StartupType Disabled
 
@@ -33,7 +33,7 @@ Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL
 
 choco install googlechrome -y
 choco install 7zip -y
-choco install sumatrapdf.install -y
+choco install sumatrapdf.install -y --allowemptychecksum
 
 #Enable Web Services
 choco install IIS-WebServerRole -source WindowsFeatures -y
