@@ -27,7 +27,8 @@ if(Test-Path "$env:ChocolateyInstall\lib-bad\sql-server-express") {
 }
 
 choco install vcredist2013 -y
-choco install sql-server-express -y --source $myfeed
+$env:sqlserver:isolocation = "C:\VPC_Images"
+choco install sql-server -y --source $myfeed
 choco install sql-server-management-studio -y
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
 
