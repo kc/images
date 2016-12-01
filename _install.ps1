@@ -23,7 +23,7 @@ $wu | Set-Service -StartupType Disabled
 
  # lousy workaround for unfairly installation failure
 if(Test-Path "$env:ChocolateyInstall\lib-bad\sql-server-express") {
-    choco install sql-server-express -y -n --source $myfeed
+    choco install sql-server-express -y -n --source $myfeed --ignore-checksums
 }
 
 choco install vcredist2013 -y
