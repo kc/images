@@ -33,7 +33,7 @@ Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL
 
 choco install googlechrome -y
 choco install 7zip -y
-choco install sumatrapdf.install -y --allowemptychecksum
+choco install sumatrapdf.install -y --ignore-checksums
 
 #Enable Web Services
 choco install IIS-WebServerRole -source WindowsFeatures -y
