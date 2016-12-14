@@ -6,14 +6,17 @@ $wu | Set-Service -StartupType Manual | Stop-Service
 choco install DotNet4.5.1 -y
 choco install KB2919442 -y
 choco install KB2919355 -y
+choco install KB2919355 -y -n
 
 
 $env:visualStudio:setupFolder = "K:\VS2015" 
 choco install VisualStudio2015Enterprise -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --version "2015.03.02"
+choco install VisualStudio2015Enterprise -y -n
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 
 choco install vcredist2015 -y
 choco install dotnetcore-vs -params "/layout K:\VS2015DotNetCore\" -ia "SKIP_VSU_CHECK=1" -y -pre --source $myfeed
+choco install visualstudiocode -y
 
 $wu | Start-Service
 choco install DotNet3.5 -y
@@ -21,14 +24,12 @@ choco install powershell -y --ignore-checksums
 $wu | Stop-Service
 $wu | Set-Service -StartupType Disabled
 
- # lousy workaround for unfairly installation failure
-if(Test-Path "$env:ChocolateyInstall\lib-bad\sql-server-express") {
-    choco install sql-server-express -y -n --source $myfeed --ignore-checksums
-}
-
 choco install vcredist2013 -y
+
 $env:sqlserver:isolocation = "C:\VPC_Images"
-choco install sql-server -y --source $myfeed
+choco install sql-server -y
+choco install sql-server -y -n
+
 choco install sql-server-management-studio -y
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
 
