@@ -8,7 +8,6 @@ choco install KB2919442 -y
 choco install KB2919355 -y
 choco install KB2919355 -y -n
 
-
 $env:visualStudio:setupFolder = "K:\VS2015" 
 choco install VisualStudio2015Enterprise -ia "/InstallSelectableItems WebTools;TypeScript;GitForWindows;SQL;PowershellTools" -y --version "2015.03.02"
 choco install VisualStudio2015Enterprise -y -n
@@ -16,6 +15,7 @@ Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Vis
 
 choco install vcredist2015 -y
 choco install dotnetcore-vs -params "/layout K:\VS2015DotNetCore\" -ia "SKIP_VSU_CHECK=1" -y -pre --source $myfeed
+choco install dotnetcore-runtime -y
 choco install visualstudiocode -y
 
 $wu | Start-Service
