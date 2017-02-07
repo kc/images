@@ -15,7 +15,7 @@ choco install vcredist2015 -y
 choco install dotnetcore-vs -params "/layout K:\VS2015DotNetCore\" -ia "SKIP_VSU_CHECK=1" -y -pre --source $myfeed
 choco install dotnetcore-runtime -y
 choco install visualstudiocode -y
-Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft VS Code\Code.exe" -ErrorAction SilentlyContinue
+#Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft VS Code\Code.exe" -ErrorAction SilentlyContinue
 
 $wu | Start-Service
 choco install DotNet3.5 -y
