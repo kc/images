@@ -7,11 +7,15 @@ choco install KB2919442 -y
 choco install KB2919355 -y
 
 $wu | Start-Service
+choco install DotNet3.5 -y
+choco install powershell -y --ignore-checksums
+
 choco install KB3035131 -y
 choco install KB3033929 -y
 choco install KB2999226 -y
 choco install DotNet4.6.2 -y
 $wu | Stop-Service
+$wu | Set-Service -StartupType Disabled
 
 #choco install vcredist2015 -y
 choco install visualstudio2017-offline -ia "--add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetCoreTools --add Microsoft.VisualStudio.Workload.NetWeb" -y
@@ -20,11 +24,6 @@ Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Vis
 choco install visualstudiocode -y
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft VS Code\Code.exe" -ErrorAction SilentlyContinue
 
-$wu | Start-Service
-choco install DotNet3.5 -y
-choco install powershell -y --ignore-checksums
-$wu | Stop-Service
-$wu | Set-Service -StartupType Disabled
 
 choco install vcredist2013 -y
 choco install sql-server-express -y
