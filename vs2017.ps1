@@ -11,10 +11,10 @@ choco install KB2919355 -y
 #choco install DotNet3.5 -y
 choco install powershell -y --ignore-checksums
 
-choco install KB3035131 -y
-choco install KB3033929 -y
-choco install KB2999226 -y
-choco install DotNet4.6.2 -y
+#choco install KB3035131 -y
+#choco install KB3033929 -y
+#choco install KB2999226 -y
+#choco install DotNet4.6.2 -y
 #$wu | Stop-Service
 #$wu | Set-Service -StartupType Disabled
 
