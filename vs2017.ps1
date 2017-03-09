@@ -27,9 +27,7 @@ $wu | Stop-Service
 $wu | Set-Service -StartupType Disabled
 
 choco install vcredist2013 -y
-
-$env:sqlserver:isolocation = "C:\VPC_Images"
-choco install sql-server -y
+choco install sql-server-express -y
 
 choco install sql-server-management-studio -y
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
