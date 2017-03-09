@@ -20,7 +20,7 @@ choco install powershell -y --ignore-checksums
 
 #choco install vcredist2015 -y
 choco install visualstudio2017-offline -ia "--add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetCoreTools --add Microsoft.VisualStudio.Workload.NetWeb" -y
-Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio\2017\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
+Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
 
 choco install visualstudiocode -y
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft VS Code\Code.exe" -ErrorAction SilentlyContinue
