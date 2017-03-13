@@ -2,7 +2,6 @@ $myfeed = "https://myget.org/F/riezebosch"
 
 $wu = Get-Service -Name wuauserv
 $wu | Set-Service -StartupType Manual | Stop-Service
-$wu | Set-Service -StartupType Disabled
 
 choco install KB2919442 -y
 choco install KB2919355 -y
