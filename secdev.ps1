@@ -27,6 +27,7 @@ Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Vis
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft VS Code\Code.exe" -ErrorAction SilentlyContinue
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
 
+choco install winpcap
 choco install wireshark
 choco install fiddler4
 choco install python --version 2.7.11
