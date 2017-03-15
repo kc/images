@@ -32,3 +32,5 @@ choco install wireshark
 choco install fiddler4
 choco install python --version 2.7.11
 choco install nodejs
+
+choco install zap
