@@ -39,7 +39,7 @@ choco install docker-toolbox -y
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","User")
 
 & docker-machine create --driver hyperv --hyperv-virtual-switch 'External Network' Default
-& docker-machine env | Invoke-Expression
+& "C:\Program Files\Docker Toolbox\docker-machine.exe" env | Invoke-Expression
 
 & docker run -p 8080:8080 -t -d --name webgoat webgoat/webgoat-7.1
 $ip = & docker-machine ip
