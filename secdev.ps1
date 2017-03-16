@@ -36,7 +36,7 @@ choco install nodejs
 choco install zap
 
 choco install docker-toolbox -y
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path","User")
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
 
 & docker-machine create --driver hyperv --hyperv-virtual-switch 'External Network' Default
 & "C:\Program Files\Docker Toolbox\docker-machine.exe" env | Invoke-Expression
