@@ -34,3 +34,15 @@ choco install python --version 2.7.11
 choco install nodejs
 
 choco install zap
+
+choco install docker-machine -y
+. docker-machine create --driver hyperv --hyperv-virtual-switch 'External Network' Default
+& "C:\Program Files\Docker Toolbox\docker-machine.exe" env | Invoke-Expression
+
+. docker run -p 8080:8080 -t -d --name webgoat webgoat/webgoat-7.1
+$ip = & docker-machine ip
+
+$shell = New-Object -ComObject WScript.Shell
+$shortcut = $shell.CreateShortcut("$Home\Desktop\WebGoat.url")
+$shortcut.TargetPath = "http://$($ip):8080/WebGoat"
+$shortcut.Save()
