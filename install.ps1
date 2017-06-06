@@ -25,7 +25,7 @@ choco install WordViewer -y
 choco install PowerPointViewer -y
 choco install FileFormatConverters -y
 # choco install vagrant -y
-$jetbrain = gci -Path "$($Boxstarter.programFiles86)\JetBrains\IntelliJ*\bin\idea.exe" | select -ExpandProperty FullName
+$jetbrain = gci -Path "$($Boxstarter.programFiles86)\JetBrains\IntelliJ*\bin\idea64.exe" | select -ExpandProperty FullName
 Install-ChocolateyPinnedTaskBarItem $jetbrain -ErrorAction SilentlyContinue
 #Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\JetBrains\IntelliJ IDEA 15.0\bin\idea.exe" -ErrorAction SilentlyContinue
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Atlassian\SourceTree\SourceTree.exe" -ErrorAction SilentlyContinue
