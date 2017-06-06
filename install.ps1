@@ -8,7 +8,7 @@ choco install soapui -y
 choco install jdk8 -y
 choco install scala.install -y -ignoreDependencies
 choco install intellijidea-ultimate -y 
-choco install eclipse -y 
+choco install eclipse-java-neon -y 
 choco install tomcat -y 
 choco install sourcetree -y
 choco install hg -y
