@@ -17,6 +17,7 @@ choco install maven -y
 choco install mysql -y
 choco install mysql.workbench -y
 
+choco install notepadplusplus -y
 
 choco install 7zip -y
 choco install sumatrapdf.install -y
