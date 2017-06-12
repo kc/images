@@ -12,7 +12,7 @@ choco install powershell -y --ignore-checksums
 $wu | Stop-Service
 $wu | Set-Service -StartupType Disabled
 
-choco install visualstudio2017-offline -ia "--add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetCoreTools --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Azure" -y
+choco install visualstudio2017-offline -ia "--add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetCoreTools --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Azure --includeRecommended" -y
 choco install visualstudiocode -y
 
 choco install vcredist2013 -y
