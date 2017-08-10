@@ -31,9 +31,3 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\14.0\NewProjectDial
 
 Install-ChocolateyVsixPackage SpecFlow https://visualstudiogallery.msdn.microsoft.com/c74211e7-cb6e-4dfa-855d-df0ad4a37dd6/file/160542/7/TechTalk.SpecFlow.Vs2015Integration.v2015.1.2.vsix
 choco install firefox -y
-
-Set-WindowsExplorerOptions -EnableShowFileExtensions
-if ($env:COMPUTERNAME -match "docent.") {
-    # Set the display to turn off after 1 hour
-    powercfg -x monitor-timeout-ac 60
-}
