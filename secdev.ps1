@@ -53,7 +53,7 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 & docker-machine create --driver hyperv --hyperv-virtual-switch 'External Network' Default
 & docker-machine env | Invoke-Expression
 
-& docker run -p 8080:8080 -t -d --name webgoat webgoat/webgoat-7.1
+& docker run -p 8080:8080 -t -d --restart unless-stopped --name webgoat webgoat/webgoat-7.1
 & docker pull andresriancho/w3af
 
 $ip = & docker-machine ip
