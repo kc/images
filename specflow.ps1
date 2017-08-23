@@ -29,5 +29,5 @@ New-Item -Path HKCU:\Software\Microsoft\VisualStudio\14.0 -Name NewProjectDialog
 Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\14.0\NewProjectDialog -Name LastUsedTemplateNameProject -Value "Console Application"
 Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\14.0\NewProjectDialog -Name LastUsedTemplateNodeProject -Value "Templates\Visual C#"
 
-Install-ChocolateyVsixPackage SpecFlow https://visualstudiogallery.msdn.microsoft.com/c74211e7-cb6e-4dfa-855d-df0ad4a37dd6/file/160542/10/TechTalk.SpecFlow.VsIntegration.2015-2017.1.6.vsix
+Install-ChocolateyVsixPackage -PackageName SpecFlow -VsixUrl https://visualstudiogallery.msdn.microsoft.com/c74211e7-cb6e-4dfa-855d-df0ad4a37dd6/file/160542/10/TechTalk.SpecFlow.VsIntegration.2015-2017.1.6.vsix -VsVersion 14
 choco install firefox -y
