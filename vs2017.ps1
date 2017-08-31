@@ -28,8 +28,8 @@ choco install ILSpy -y
 choco install git -y
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
 
-Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
-Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles)\Microsoft VS Code\Code.exe" -ErrorAction SilentlyContinue
-Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
+Install-ChocolateyPinnedTaskBarItem "${env:ProgramFiles(86)}\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
+Install-ChocolateyPinnedTaskBarItem "${env:ProgramFiles}\Microsoft VS Code\Code.exe" -ErrorAction SilentlyContinue
+Install-ChocolateyPinnedTaskBarItem "${env:ProgramFiles(86)}\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Ssms.exe" -ErrorAction SilentlyContinue
 $ilspy = gci -Path "$env:ChocolateyInstall\lib\ILSpy*\tools\ILSpy.exe" | select -ExpandProperty FullName
 Install-ChocolateyPinnedTaskBarItem $ilspy -ErrorAction SilentlyContinue
