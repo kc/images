@@ -14,6 +14,7 @@ choco install sourcetree -y
 choco install hg -y
 choco install maven -y
 
+choco install vcredist2013 -y
 choco install mysql -y
 choco install mysql.workbench -y
 
