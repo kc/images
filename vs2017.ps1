@@ -14,7 +14,9 @@ $wu | Set-Service -StartupType Disabled
 
 choco install visualstudio2017-offline -ia "--add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetCoreTools --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Azure --includeRecommended" -y
 choco install visualstudiocode -y
-choco install dotnetcore-sdk -y
+
+# the KB from dependencies isn't required but results in installing ~170 other Windows Updates
+choco install dotnetcore-sdk -y --ignoredependencies
 
 choco install vcredist2013 -y
 choco install sql-server-express -y
