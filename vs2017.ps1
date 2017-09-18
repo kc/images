@@ -1,16 +1,16 @@
 $myfeed = "https://myget.org/F/riezebosch"
 
-#$wu = Get-Service -Name wuauserv
-#$wu | Set-Service -StartupType Manual | Stop-Service
+$wu = Get-Service -Name wuauserv
+$wu | Set-Service -StartupType Manual | Stop-Service
 
 choco install KB2919442 -y
 choco install KB2919355 -y
 
-#$wu | Start-Service
+$wu | Start-Service
 choco install DotNet3.5 -y
 choco install powershell -y --ignore-checksums
-#$wu | Stop-Service
-#$wu | Set-Service -StartupType Disabled
+$wu | Stop-Service
+$wu | Set-Service -StartupType Disabled
 
 choco install visualstudio2017-offline -ia "--add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetCoreTools --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Azure --includeRecommended" -y
 choco install visualstudiocode -y
