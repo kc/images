@@ -1,0 +1,2 @@
+choco install sql-server -o -ia '/q /ACTION=Install /FEATURES=SQL,AS,RS,Conn,SDK,BC /INSTANCENAME=MSSQLSERVER  /SQLSVCINSTANTFILEINIT="True" /IACCEPTSQLSERVERLICENSETERMS'
+choco install sharepoint -y
