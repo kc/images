@@ -12,6 +12,6 @@ Add-PSSnapin Microsoft.SharePoint.PowerShell
 
 $password = 'Pa$$w0rd' | ConvertTo-SecureString -AsPlainText -Force
 $cred =  New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $("administrator"), $password
-New-SPConfigurationDatabase -DatabaseName "SharePoint_Config" -DatabaseServer "." -FarmCredentials $cred -Passphrase $password
+New-SPConfigurationDatabase -DatabaseName "SharePoint_Config" -DatabaseServer $env:COMPUTERNAME -FarmCredentials $cred -Passphrase $password
 
 & PSConfig.exe -cmd upgrade -inplace b2b -wait -cmd applicationcontent -install -cmd installfeatures -cmd secureresources -cmd services -install
