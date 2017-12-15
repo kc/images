@@ -6,6 +6,13 @@ choco install intellijidea-ultimate -y
 choco install eclipse -y 
 choco install maven -y
 choco install docker-for-windows -y --version 17.09.1.14687
+
+# Configure the Docker virtual machine to use more CPU's and memory
+Stop-VM MobyLinuxVM
+Set-VMProcessor -VMName MobyLinuxVM -Count 4
+Set-VMMemory -VMName MobyLinuxVM -StartupBytes 12GB
+Start-VM MobyLinuxVM
+
 choco install docker-compose -y --version 1.17.1
 choco install googlechrome -y
 choco install notepadplusplus -y
