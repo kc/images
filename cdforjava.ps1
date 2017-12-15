@@ -6,6 +6,8 @@ choco install intellijidea-ultimate -y
 choco install eclipse -y 
 choco install maven -y
 choco install docker-for-windows -y --version 17.12.0.14746-edge
+choco install docker-compose -y --version 1.17.1
+choco install googlechrome -y
 choco install notepadplusplus -y
 choco install 7zip -y
 choco install sumatrapdf.install -y
