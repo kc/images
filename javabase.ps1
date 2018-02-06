@@ -25,6 +25,7 @@ choco install sumatrapdf.install -y
 choco install WordViewer -y
 choco install PowerPointViewer -y
 choco install FileFormatConverters -y
+choco install googlechrome -y
 
 $jetbrain = gci -Path "$($Boxstarter.programFiles86)\JetBrains\IntelliJ*\bin\idea64.exe" | select -ExpandProperty FullName
 Install-ChocolateyPinnedTaskBarItem $jetbrain -ErrorAction SilentlyContinue
