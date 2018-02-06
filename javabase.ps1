@@ -11,7 +11,6 @@ choco install intellijidea-ultimate -y
 choco install eclipse -y 
 choco install tomcat -y 
 choco install sourcetree -y
-choco install hg -y
 choco install maven -y
 
 choco install vcredist2013 -y
