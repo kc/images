@@ -4,8 +4,8 @@ choco install poshgit -y
 choco install git-credential-manager-for-windows -y
 
 choco install soapui -y
-#choco install javaruntime -y -version 7.0.75 
 choco install jdk8 -y
+choco install jdk9 -y
 choco install scala.install -y -ignoreDependencies
 choco install intellijidea-ultimate -y 
 choco install eclipse -y 
@@ -26,10 +26,10 @@ choco install sumatrapdf.install -y
 choco install WordViewer -y
 choco install PowerPointViewer -y
 choco install FileFormatConverters -y
-# choco install vagrant -y
+
 $jetbrain = gci -Path "$($Boxstarter.programFiles86)\JetBrains\IntelliJ*\bin\idea64.exe" | select -ExpandProperty FullName
 Install-ChocolateyPinnedTaskBarItem $jetbrain -ErrorAction SilentlyContinue
-#Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\JetBrains\IntelliJ IDEA 15.0\bin\idea.exe" -ErrorAction SilentlyContinue
+
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Atlassian\SourceTree\SourceTree.exe" -ErrorAction SilentlyContinue
 
 Set-WindowsExplorerOptions -EnableShowFileExtensions
