@@ -13,6 +13,7 @@ choco install tomcat -y
 choco install sourcetree -y
 choco install maven -y
 
+choco install vcredist2013 -y
 choco install mysql -y
 choco install heidisql -y
 
