@@ -28,6 +28,7 @@ choco install 7zip -y
 choco install sumatrapdf.install -y --ignore-checksums
 choco install ILSpy -y
 choco install git -y
+choco install docker -y
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
 
 Install-ChocolateyPinnedTaskBarItem "${env:ProgramFiles(x86)}\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe" -ErrorAction SilentlyContinue
