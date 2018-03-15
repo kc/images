@@ -14,7 +14,9 @@ Kopiëer de `cache.vhdx` terug naar `REPO xxx`. Wellicht de `K:\` eerst even sch
 
 ### Update van chocolatey/boxstarter
 
-Voer `Update-BoxStarter.ps1` uit op een uitgerold image en kopieer `chocolatey.zip` en `BoxStarter.zip` terug naar `REPO xxx`
+1. Voer `Update-BoxStarter.ps1` uit. De laatste versie van chocolatey wordt opgeslagen in de directory `chocolatey.<versie>`, en de laatste versie van BoxStart in de directory `BoxStarter`. 
+2. Vergeet vervolgens niet de wijzigingen te committen en te pushen naar de betreffende branch in utrecht en veenendaal.
+3. Als je de upgrade in één keer wil uitvoeren voor alle images, voer de upgrade dan uit op master en rebase alle andere branches vervolgens hierop (let op: rebasen is een gevaarlijke operatie).
 
 ### Synchronizatie vestigingen
 
