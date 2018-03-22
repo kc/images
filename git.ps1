@@ -1,3 +1,5 @@
+# Dit is een oude versie. Er is een nieuwe versie voor ws2016 gemaakt, welke embedded is in de repo op de file share(s)
+# De betreffende branch is 'git-winsrv2016'
 choco install git -y
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
 
