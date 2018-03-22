@@ -1,3 +1,6 @@
+# This is the old boxstarter package, used for the windows server 2012R2 vs2017 training template 'vs2017'
+# A new package was created for the 2016 image, which is embedded in the git repo on the file share(s) 'vs2017-winsrv2016'.
+
 $myfeed = "https://myget.org/F/riezebosch"
 
 $wu = Get-Service -Name wuauserv
