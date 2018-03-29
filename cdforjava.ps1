@@ -14,6 +14,7 @@ choco install googlechrome -y
 choco install notepadplusplus -y
 choco install 7zip -y
 choco install sumatrapdf.install -y
+choco install nodejs.install -y
 
 # Load Docker images
 docker load -i C:\VPC_images\dockerimages\jenkins-2.89.2
