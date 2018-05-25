@@ -18,14 +18,12 @@ choco install nodejs.install -y
 choco install visualstudiocode -y
 
 # Load Docker images
-docker load -i C:\VPC_images\dockerimages\jenkins-2.89.2
-docker load -i C:\VPC_images\dockerimages\redis-latest
-docker load -i C:\VPC_images\dockerimages\postgresql-9.6-2
-docker load -i C:\VPC_images\dockerimages\gitlab-10.3.3
-docker load -i C:\VPC_images\dockerimages\atlassian-jira-software-7.7.0
-docker load -i C:\VPC_images\dockerimages\sonarqube-6.7.1
-docker load -i C:\VPC_images\dockerimages\nexus3-3.7.1
-docker load -i C:\VPC_images\dockerimages\registry-2
+docker load -i C:\VPC_images\dockerimages\jenkins.tar
+docker load -i C:\VPC_images\dockerimages\gitlab.tar
+docker load -i C:\VPC_images\dockerimages\jira.tar
+docker load -i C:\VPC_images\dockerimages\sonarqube.tar
+docker load -i C:\VPC_images\dockerimages\nexus.tar
+docker load -i C:\VPC_images\dockerimages\dockerregistry.tar
 
 $jetbrain = gci -Path "$($Boxstarter.programFiles86)\JetBrains\IntelliJ*\bin\idea64.exe" | select -ExpandProperty FullName
 Install-ChocolateyPinnedTaskBarItem $jetbrain -ErrorAction SilentlyContinue
