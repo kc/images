@@ -5,11 +5,11 @@ choco install jdk8 -y
 choco install intellijidea-ultimate -y 
 choco install eclipse -y 
 choco install maven -y
-choco install docker-for-windows -y --version 17.12.0.15139
+choco install docker-for-windows -y --version 18.03.1.17513
 choco install git.install
 choco install putty.install
 
-choco install docker-compose -y --version 1.19.0
+choco install docker-compose -y --version 1.21.2
 choco install googlechrome -y
 choco install notepadplusplus -y
 choco install 7zip -y
