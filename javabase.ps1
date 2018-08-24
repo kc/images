@@ -5,7 +5,6 @@ choco install git-credential-manager-for-windows -y
 
 choco install soapui -y
 choco install jdk8 -y
-choco install jdk9 -y --version 9.0.4.11
 choco install scala.install -y -ignoreDependencies
 choco install intellijidea-ultimate -y 
 choco install eclipse -y 
