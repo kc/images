@@ -22,7 +22,6 @@ choco install notepadplusplus -y
 choco install 7zip -y
 choco install sumatrapdf.install -y
 
-choco install FileFormatConverters -y
 choco install googlechrome -y
 choco install nodejs.install -y
 choco install postman -y
