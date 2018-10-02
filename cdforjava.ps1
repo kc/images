@@ -5,7 +5,7 @@ choco install jdk8 -y
 choco install intellijidea-ultimate -y 
 choco install eclipse -y 
 choco install maven -y
-choco install docker-for-windows -y --version 18.03.1.17513
+choco install docker-for-windows -y --version 18.06.1.19507
 choco install git.install
 choco install putty.install
 
