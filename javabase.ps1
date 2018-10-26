@@ -24,7 +24,7 @@ choco install sumatrapdf.install -y
 choco install googlechrome -y
 choco install nodejs.install -y
 choco install postman -y
-choco install visualstudiocode -y
+choco install vscode -y
 
 $jetbrain = gci -Path "$($Boxstarter.programFiles86)\JetBrains\IntelliJ*\bin\idea64.exe" | select -ExpandProperty FullName
 Install-ChocolateyPinnedTaskBarItem $jetbrain -ErrorAction SilentlyContinue
