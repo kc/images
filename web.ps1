@@ -11,7 +11,7 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
 npm install -g npm
 npm install -g typescript
 
-choco install visualstudiocode -y
+choco install vscode -y
 choco install googlechrome -y
 choco install firefox -y
 choco install 7zip -y
