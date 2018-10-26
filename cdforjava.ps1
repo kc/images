@@ -14,7 +14,7 @@ choco install notepadplusplus -y
 choco install 7zip -y
 choco install sumatrapdf.install -y
 choco install nodejs.install -y
-choco install visualstudiocode -y
+choco install vscode -y
 choco install openjdk -y
 
 # Load Docker images
