@@ -5,7 +5,7 @@ setx PATH "$env:Path;$env:ProgramFiles\git\cmd"
 #choco install eclipse -y 
 #choco install maven -y
 #choco install docker-for-windows -y --version 18.06.1.19507
-#choco install git.install
+choco install git.install
 #choco install putty.install
 
 #choco install googlechrome -y
