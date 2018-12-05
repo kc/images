@@ -1,7 +1,6 @@
 choco install git -y
 setx PATH "$env:Path;$env:ProgramFiles\git\cmd"
 
-# choco install jdk8 -y
 choco install intellijidea-ultimate -y 
 choco install eclipse -y 
 choco install maven -y
@@ -15,7 +14,7 @@ choco install 7zip -y
 choco install sumatrapdf.install -y
 choco install nodejs.install -y
 choco install vscode -y
-choco install openjdk -y
+choco install openjdk -y --version 11.0.1
 
 # Load Docker images
 docker load -i C:\VPC_images\dockerimages\jenkins.tar
