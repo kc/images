@@ -23,6 +23,7 @@ docker load -i C:\VPC_images\dockerimages\jira.tar
 docker load -i C:\VPC_images\dockerimages\sonarqube.tar
 docker load -i C:\VPC_images\dockerimages\nexus.tar
 docker load -i C:\VPC_images\dockerimages\dockerregistry.tar
+docker load -i C:\VPC_images\dockerimages\openjdk.tar
 
 $jetbrain = gci -Path "$($Boxstarter.programFiles86)\JetBrains\IntelliJ*\bin\idea64.exe" | select -ExpandProperty FullName
 Install-ChocolateyPinnedTaskBarItem $jetbrain -ErrorAction SilentlyContinue
