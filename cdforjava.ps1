@@ -4,7 +4,7 @@ setx PATH "$env:Path;$env:ProgramFiles\git\cmd"
 choco install intellijidea-ultimate -y 
 choco install eclipse -y 
 choco install maven -y
-choco install docker-for-windows -y --version 18.06.1.19507
+choco install docker-desktop -y --version 2.0.0.0
 choco install git.install
 choco install putty.install
 
