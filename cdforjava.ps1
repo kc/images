@@ -1,12 +1,8 @@
-#choco install git -y
-#setx PATH "$env:Path;$env:ProgramFiles\git\cmd"
-
 choco install openjdk -y --version 11.0.1
 choco install intellijidea-ultimate -y 
 choco install eclipse -y --ignore-dependencies # Ignore JDK8 dependency
 choco install maven -y --ignore-dependencies # Ignore JDK8 dependency
 choco install docker-desktop -y --version 2.0.0.0
-#choco install git.install
 choco install putty.install
 
 choco install googlechrome -y
@@ -15,8 +11,6 @@ choco install 7zip -y
 choco install sumatrapdf.install -y
 choco install nodejs.install -y
 choco install vscode -y
-
-#choco uninstall git -y
 choco install git -y
 
 # Load Docker images
