@@ -4,7 +4,7 @@ choco install poshgit -y
 choco install git-credential-manager-for-windows -y
 
 choco install soapui -y
-choco install jdk8 -y
+choco install jdk8 -y --version 8.0.191 # Specific version so we can remove it from the path
 choco install scala.install -y -ignoreDependencies
 choco install intellijidea-ultimate -y 
 choco install eclipse -y 
@@ -27,6 +27,8 @@ choco install googlechrome -y
 choco install nodejs.install -y
 choco install postman -y
 choco install vscode -y
+
+setx /M PATH "%PATH:C:\Program Files\Java\jdk1.8.0_191\bin;=%" # Remove Java 8 from Path, so Java 11 is used
 
 $jetbrain = gci -Path "$($Boxstarter.programFiles86)\JetBrains\IntelliJ*\bin\idea64.exe" | select -ExpandProperty FullName
 Install-ChocolateyPinnedTaskBarItem $jetbrain -ErrorAction SilentlyContinue
