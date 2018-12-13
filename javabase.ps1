@@ -28,7 +28,17 @@ choco install nodejs.install -y
 choco install postman -y
 choco install vscode -y
 
-setx /M PATH "%PATH:C:\Program Files\Java\jdk1.8.0_191\bin;=%" # Remove Java 8 from Path, so Java 11 is used
+# Remove Java 8 from Path, so Java 11 is used
+$path = [System.Environment]::GetEnvironmentVariable(
+    'PATH',
+    'Machine'
+)
+$path = ($path.Split(';') | Where-Object { $_ -ne 'C:\Program Files\Java\jdk1.8.0_191\bin' }) -join ';'
+[System.Environment]::SetEnvironmentVariable(
+    'PATH',
+    $path,
+    'Machine'
+)
 
 $jetbrain = gci -Path "$($Boxstarter.programFiles86)\JetBrains\IntelliJ*\bin\idea64.exe" | select -ExpandProperty FullName
 Install-ChocolateyPinnedTaskBarItem $jetbrain -ErrorAction SilentlyContinue
