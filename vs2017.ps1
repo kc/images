@@ -33,7 +33,7 @@ choco install visualstudio2017enterprise -y --execution-timeout=7000 `
 choco install vscode -y --execution-timeout=7000
 choco install git -y # Includes git lfs & git credential manager for windows
 choco install nodejs-lts -y
-choco install docker-for-windows --version 18.06.1.19507 -y
+choco install docker-desktop --version 2.0.0.0 -y
 choco install docker-compose -y 
 choco install ILSpy -y
 choco install 7zip -y
@@ -43,7 +43,7 @@ choco install firefox -y
 
 # We need this stuff for the DDAS training
 choco install sql-server-express --version 14.1801.3958.1 -y # SQL Server 2017 Express d.d. apr 2018
-choco install sql-server-management-studio --version 14.0.17285.0 -y # 17.9 d.d. sep 2018
+choco install sql-server-management-studio --version 14.0.17289.1 -y # 17.9.1 d.d. sep 2018
 C:\VPC_images\Functions\Execute-SqlCmd.ps1 -sqlFile "C:\VPC_images\CustomScripts\CreateSchoolSampleDatabase.sql"
 
 #############################################################################
