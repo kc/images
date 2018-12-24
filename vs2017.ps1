@@ -43,7 +43,7 @@ choco install firefox -y
 
 # We need this stuff for the DDAS training
 choco install sql-server-express --version 14.1801.3958.1 -y # SQL Server 2017 Express d.d. apr 2018
-choco install sql-server-management-studio --version 14.0.17289.1 -y # 17.9.1 d.d. sep 2018
+choco install sql-server-management-studio --version 14.0.17289.1 -y # 17.9.1 d.d. nov 2018
 C:\VPC_images\Functions\Execute-SqlCmd.ps1 -sqlFile "C:\VPC_images\CustomScripts\CreateSchoolSampleDatabase.sql"
 
 #############################################################################
