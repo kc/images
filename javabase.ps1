@@ -1,8 +1,4 @@
 choco install git -y
-setx PATH "$env:Path;$env:ProgramFiles\git\cmd"
-choco install poshgit -y
-choco install git-credential-manager-for-windows -y
-
 choco install soapui -y
 choco install jdk8 -y --version 8.0.191 # Specific version so we can remove it from the path
 choco install scala.install -y -ignoreDependencies
@@ -19,7 +15,6 @@ choco install mysql -y
 choco install heidisql -y
 
 choco install notepadplusplus -y
-
 choco install 7zip -y
 choco install sumatrapdf.install -y
 
@@ -40,9 +35,26 @@ $path = ($path.Split(';') | Where-Object { $_ -ne 'C:\Program Files\Java\jdk1.8.
     'Machine'
 )
 
-$jetbrain = gci -Path "$($Boxstarter.programFiles86)\JetBrains\IntelliJ*\bin\idea64.exe" | select -ExpandProperty FullName
-Install-ChocolateyPinnedTaskBarItem $jetbrain -ErrorAction SilentlyContinue
+#############################################################################
+# Fix Windows Search (Cortana)
+#############################################################################
+C:\VPC_images\Functions\Fix-WindowsSearch.ps1
 
-Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Atlassian\SourceTree\SourceTree.exe" -ErrorAction SilentlyContinue
+#############################################################################
+# Create task bar items
+#############################################################################
+$intellij = gci -Path "${env:ProgramFiles(x86)}\JetBrains\IntelliJ*\bin\idea64.exe" | select -ExpandProperty FullName
+$taskBarLinks = @(
+    ,$intellij
+    ,"${env:ProgramFiles(x86)}\Atlassian\SourceTree\SourceTree.exe"
+)
 
+foreach($taskBarLink in $taskBarLinks)
+{
+    C:\VPC_images\Tools\syspin.exe $taskBarLink c:5386
+}
+
+#############################################################################
+# Windows Explorer options
+#############################################################################
 Set-WindowsExplorerOptions -EnableShowFileExtensions
