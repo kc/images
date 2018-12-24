@@ -22,7 +22,25 @@ docker load -i C:\VPC_images\dockerimages\nexus.tar
 docker load -i C:\VPC_images\dockerimages\dockerregistry.tar
 docker load -i C:\VPC_images\dockerimages\openjdk.tar
 
-$jetbrain = gci -Path "$($Boxstarter.programFiles86)\JetBrains\IntelliJ*\bin\idea64.exe" | select -ExpandProperty FullName
-Install-ChocolateyPinnedTaskBarItem $jetbrain -ErrorAction SilentlyContinue
+#############################################################################
+# Fix Windows Search (Cortana)
+#############################################################################
+C:\VPC_images\Functions\Fix-WindowsSearch.ps1
 
+#############################################################################
+# Create task bar items
+#############################################################################
+$intellij = gci -Path "${env:ProgramFiles(x86)}\JetBrains\IntelliJ*\bin\idea64.exe" | select -ExpandProperty FullName
+$taskBarLinks = @(
+    ,$intellij
+)
+
+foreach($taskBarLink in $taskBarLinks)
+{
+    C:\VPC_images\Tools\syspin.exe $taskBarLink c:5386
+}
+
+#############################################################################
+# Windows Explorer options
+#############################################################################
 Set-WindowsExplorerOptions -EnableShowFileExtensions
