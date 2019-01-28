@@ -13,6 +13,8 @@ choco install openjdk -y --version 11.0.1
 choco install vcredist2013 -y
 choco install mysql -y
 choco install heidisql -y
+# Workaround for HeidiSQL so it can connect to MySQL (which changed security)
+mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'"
 
 choco install notepadplusplus -y
 choco install 7zip -y
