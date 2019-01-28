@@ -49,6 +49,7 @@ $intellij = gci -Path "${env:ProgramFiles(x86)}\JetBrains\IntelliJ*\bin\idea64.e
 $taskBarLinks = @(
     ,$intellij
     ,"${env:ProgramFiles(x86)}\Atlassian\SourceTree\SourceTree.exe"
+    ,"${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe"
 )
 
 foreach($taskBarLink in $taskBarLinks)
