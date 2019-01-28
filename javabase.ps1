@@ -25,6 +25,9 @@ choco install nodejs.install -y
 choco install postman -y
 choco install vscode -y
 
+# tool to show .md-slides
+npm i -g @infosupport/kc-cli
+
 # Remove Java 8 from Path, so Java 11 is used
 $path = [System.Environment]::GetEnvironmentVariable(
     'PATH',
