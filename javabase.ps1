@@ -1,6 +1,6 @@
 choco install git -y
 choco install soapui -y
-choco install jdk8 -y --version 8.0.191 # Specific version so we can remove it from the path
+choco install jdk8 -y --version 8.0.201 # Specific version so we can remove it from the path
 choco install scala.install -y -ignoreDependencies
 choco install intellijidea-ultimate -y 
 choco install eclipse -y 
@@ -8,7 +8,7 @@ choco install tomcat -y
 choco install sourcetree -y
 choco install maven -y
 choco install wildfly -y
-choco install openjdk -y --version 11.0.1
+choco install openjdk -y --version 11.0.2.01
 
 choco install vcredist2013 -y
 choco install mysql -y
@@ -30,7 +30,7 @@ $path = [System.Environment]::GetEnvironmentVariable(
     'PATH',
     'Machine'
 )
-$path = ($path.Split(';') | Where-Object { $_ -ne 'C:\Program Files\Java\jdk1.8.0_191\bin' }) -join ';'
+$path = ($path.Split(';') | Where-Object { $_ -ne 'C:\Program Files\Java\jdk1.8.0_201\bin' }) -join ';'
 [System.Environment]::SetEnvironmentVariable(
     'PATH',
     $path,
