@@ -3,6 +3,7 @@ Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowFileEx
 choco install git
 choco install sumatrapdf.install
 choco install xmlspy
+choco install openjdk -y --version 11.0.1
 
 #############################################################################
 # Fix Windows Search (Cortana)
