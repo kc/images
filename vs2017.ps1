@@ -24,7 +24,7 @@ Install-WindowsFeature Containers # For Windows Containers
 
 choco install visualstudio2017enterprise --version 15.9.2.0 -y --execution-timeout=7000 `
     --params "--bootstrapperPath K:\visualstudio2017enterprise-layout\vs_setup.exe" `
-    --ia "--add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetCoreTools --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Azure --add Microsoft.VisualStudio.Workload.Node --add Microsoft.Net.Component.4.7.1.SDK --add Microsoft.Net.Component.4.7.1.TargetingPack --includeRecommended"
+    --ia "--add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetCoreTools --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Azure --add Microsoft.VisualStudio.Workload.Node --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.Net.Component.4.7.1.SDK --add Microsoft.Net.Component.4.7.1.TargetingPack --includeRecommended"
 
 #############################################################################
 # Remaining software installations
