@@ -35,7 +35,7 @@ choco install visualstudio2017enterprise --version 15.9.4.0 -y --execution-timeo
 choco install vscode -y --execution-timeout=7000
 choco install git -y # Includes git lfs & git credential manager for windows
 choco install nodejs-lts -y
-choco install docker-desktop --version 2.0.0.0 -y
+choco install docker-desktop --version 2.0.0.2 -y
 choco install docker-compose -y 
 choco install ILSpy -y
 choco install 7zip -y
