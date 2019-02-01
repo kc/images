@@ -16,13 +16,15 @@ Install-WindowsFeature Containers # For Windows Containers
 # Visual Studio 2017 Enterprise: Offline installation using layout directory.
 # 
 # Use below command to create a layout directory for offline installation. 
-# Make sure the same workloads you want to install are also in the layout.
 # The layout should be included in the cache.vhdx that is copied to the machine from TDS.
+#
+# IMPORTANT: Delete the entire layout directory (K:\visualstudio2017enterprise-layout) before creating a new one.
+# IMPORTANT: Make sure the correct version and included workloads is used when creating the layout.
 # 
-# choco install visualstudio2017enterprise -y --params "--layout K:\visualstudio2017enterprise-layout --add workload1 --add workload2 --add component1 --includeRecommended"
+# choco install visualstudio2017enterprise --version 15.9.4.0 -y --params "--layout K:\visualstudio2017enterprise-layout --add workload1 --add workload2 --add component1 --includeRecommended"
 #############################################################################
 
-choco install visualstudio2017enterprise --version 15.9.2.0 -y --execution-timeout=7000 `
+choco install visualstudio2017enterprise --version 15.9.4.0 -y --execution-timeout=7000 `
     --params "--bootstrapperPath K:\visualstudio2017enterprise-layout\vs_setup.exe" `
     --ia "--add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetCoreTools --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Azure --add Microsoft.VisualStudio.Workload.Node --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.Net.Component.4.7.1.SDK --add Microsoft.Net.Component.4.7.1.TargetingPack --includeRecommended"
 
