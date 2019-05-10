@@ -18,7 +18,7 @@ Install-WindowsFeature Containers # For Windows Containers
 # Use below command to create a layout directory for offline installation. 
 # The layout should be included in the cache.vhdx that is copied to the machine from TDS.
 #
-# IMPORTANT: Delete the entire layout directory (K:\visualstudio2017enterprise-layout) before creating a new one.
+# IMPORTANT: Delete the entire layout directory (K:\visualstudio2019enterprise-layout) before creating a new one.
 # IMPORTANT: Make sure the correct version and included workloads is used when creating the layout.
 # 
 # choco install visualstudio2019enterprise --version 16.0.3.0 -y --params "--layout K:\visualstudio2019enterprise-layout --add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetCoreTools --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Azure --add Microsoft.VisualStudio.Workload.Node --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.Net.Component.4.7.2.SDK --add Microsoft.Net.Component.4.7.2.TargetingPack --includeRecommended" --force
@@ -58,7 +58,7 @@ C:\VPC_images\Functions\Fix-WindowsSearch.ps1
 #############################################################################
 
 $taskBarLinks = @(
-    ,"${env:ProgramFiles(x86)}\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe"
+    ,"${env:ProgramFiles(x86)}\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\devenv.exe"
     ,"${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe"
 )
 
