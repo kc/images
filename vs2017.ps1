@@ -21,10 +21,10 @@ Install-WindowsFeature Containers # For Windows Containers
 # IMPORTANT: Delete the entire layout directory (K:\visualstudio2017enterprise-layout) before creating a new one.
 # IMPORTANT: Make sure the correct version and included workloads is used when creating the layout.
 # 
-# choco install visualstudio2017enterprise --version 15.9.4.0 -y --params "--layout K:\visualstudio2017enterprise-layout --add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetCoreTools --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Azure --add Microsoft.VisualStudio.Workload.Node --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.Net.Component.4.7.2.SDK --add Microsoft.Net.Component.4.7.2.TargetingPack --includeRecommended" --force
+# choco install visualstudio2017enterprise --version 15.9.11.0 -y --params "--layout K:\visualstudio2017enterprise-layout --add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetCoreTools --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Azure --add Microsoft.VisualStudio.Workload.Node --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.Net.Component.4.7.2.SDK --add Microsoft.Net.Component.4.7.2.TargetingPack --includeRecommended" --force
 #############################################################################
 
-choco install visualstudio2017enterprise --version 15.9.4.0 -y --execution-timeout=7000 `
+choco install visualstudio2017enterprise --version 15.9.11.0 -y --execution-timeout=7000 `
     --params "--bootstrapperPath K:\visualstudio2017enterprise-layout\vs_setup.exe" `
     --ia "--add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetCoreTools --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Azure --add Microsoft.VisualStudio.Workload.Node --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.Net.Component.4.7.1.SDK --add Microsoft.Net.Component.4.7.1.TargetingPack --includeRecommended"
 
@@ -35,7 +35,7 @@ choco install visualstudio2017enterprise --version 15.9.4.0 -y --execution-timeo
 choco install vscode -y --execution-timeout=7000
 choco install git -y # Includes git lfs & git credential manager for windows
 choco install nodejs-lts -y
-choco install docker-desktop --version 2.0.0.2 -y
+choco install docker-desktop --version 2.0.0.3 -y
 choco install docker-compose -y 
 choco install ILSpy -y
 choco install 7zip -y
