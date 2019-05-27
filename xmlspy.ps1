@@ -1,4 +1,5 @@
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowFileExtensions
+Install-WindowsFeature Net-Framework-Core # .NET 3.0
 
 choco install git
 choco install sumatrapdf.install
