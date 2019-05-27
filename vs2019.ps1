@@ -32,6 +32,7 @@ choco install visualstudio2019enterprise --version 16.0.3.0 -y --execution-timeo
 # Remaining software installations
 #############################################################################
 
+choco install dotnetcore-sdk -y
 choco install vscode -y --execution-timeout=7000
 choco install git -y # Includes git lfs & git credential manager for windows
 choco install nodejs-lts -y
