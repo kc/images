@@ -1,6 +1,6 @@
 choco install git -y
 choco install soapui -y
-choco install jdk8 -y --version 8.0.201 # Specific version so we can remove it from the path
+choco install jdk8 -y --version 8.0.211 # Specific version so we can remove it from the path
 choco install scala.install -y -ignoreDependencies
 choco install intellijidea-ultimate -y 
 choco install eclipse -y 
