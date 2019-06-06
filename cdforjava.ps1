@@ -1,4 +1,4 @@
-choco install openjdk -y --version 11.0.1
+choco install adoptopenjdk11 -y --version 11.0.3.7
 choco install intellijidea-ultimate -y 
 choco install eclipse -y --ignore-dependencies # Ignore JDK8 dependency
 choco install maven -y --ignore-dependencies # Ignore JDK8 dependency
@@ -12,6 +12,9 @@ choco install sumatrapdf.install -y
 choco install nodejs.install -y
 choco install vscode -y
 choco install git -y
+
+# tool to show .md-slides
+npm i -g @infosupport/kc-cli
 
 # Load Docker images
 docker load -i C:\VPC_images\dockerimages\jenkins.tar
