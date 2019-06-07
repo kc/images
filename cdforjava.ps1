@@ -23,7 +23,7 @@ docker load -i C:\VPC_images\dockerimages\jira.tar
 docker load -i C:\VPC_images\dockerimages\sonarqube.tar
 docker load -i C:\VPC_images\dockerimages\nexus.tar
 docker load -i C:\VPC_images\dockerimages\dockerregistry.tar
-docker load -i C:\VPC_images\dockerimages\openjdk.tar
+docker load -i C:\VPC_images\dockerimages\adoptopenjdk.tar
 
 #############################################################################
 # Fix Windows Search (Cortana)
