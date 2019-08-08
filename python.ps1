@@ -16,11 +16,6 @@ choco install anaconda3 --params '"/AddToPath"' -y
 # Refresh path variables
 refreshenv
 
-# Revert to Python 3.6.8 due to bug in pycharm
-conda install python=3.6.8 -y
-
-# Install some packages
-pip install cntk
 
 #############################################################################
 # Fix Windows Search (Cortana)
