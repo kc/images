@@ -1,6 +1,5 @@
 choco install git -y
 choco install soapui -y
-choco install jdk8 -y --version 8.0.211 # Specific version so we can remove it from the path
 choco install scala.install -y -ignoreDependencies
 choco install intellijidea-ultimate -y 
 choco install eclipse -y 
@@ -8,7 +7,7 @@ choco install tomcat -y
 choco install sourcetree -y
 choco install maven -y
 choco install wildfly -y
-choco install openjdk -y --version 11.0.2.01
+choco install adoptopenjdk11 -y
 
 choco install vcredist2013 -y
 choco install mysql -y
@@ -27,18 +26,6 @@ choco install vscode -y
 
 # tool to show .md-slides
 npm i -g @infosupport/kc-cli
-
-# Remove Java 8 from Path, so Java 11 is used
-$path = [System.Environment]::GetEnvironmentVariable(
-    'PATH',
-    'Machine'
-)
-$path = ($path.Split(';') | Where-Object { $_ -ne 'C:\Program Files\Java\jdk1.8.0_201\bin' }) -join ';'
-[System.Environment]::SetEnvironmentVariable(
-    'PATH',
-    $path,
-    'Machine'
-)
 
 #############################################################################
 # Fix Windows Search (Cortana)
