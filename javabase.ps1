@@ -8,8 +8,6 @@ choco install tomcat -y --version 9.0.24
 choco install sourcetree -y --version 3.1.3
 choco install maven -y --version 3.6.1.20190711
 choco install wildfly -y --version 17.0.1
-#docker added because of minor remove when ready
-choco install docker-desktop -y --version 2.0.0.3
 choco install adoptopenjdk11 -y --version 11.0.4.11
 
 choco install vcredist2013 -y --version 12.0.40660.20180427
