@@ -25,6 +25,8 @@ choco install nodejs.install -y --version 12.9.0
 choco install postman -y --version 7.5.0
 choco install vscode -y --version 1.37.1
 
+choco install firefox # temporary for specific training
+
 # tool to show .md-slides
 npm i -g @infosupport/kc-cli
 
