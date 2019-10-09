@@ -21,7 +21,7 @@ Enable-WindowsOptionalFeature -NoRestart -Online -FeatureName Microsoft-Windows-
 # Ubuntu is downloaded and stored on our own shares to save bandwith and speedup installation.
 # Register PATH so the command 'ubuntu1804' will start Ubuntu from any directory
 $userenv = [System.Environment]::GetEnvironmentVariable("Path", "User")
-[System.Environment]::SetEnvironmentVariable("PATH", $userenv + ";C:\VPC_images\Ubuntu1804", "User")
+[System.Environment]::SetEnvironmentVariable("PATH", $userenv + ";C:\VPC_images\", "User")
 
 
 #############################################################################
