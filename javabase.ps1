@@ -1,6 +1,5 @@
 choco install git -y --version 2.23.0
 choco install soapui -y --version 5.5.0
-choco install jdk8 -y --version 8.0.221
 choco install scala.install -y -ignoreDependencies --version 2.11.4
 choco install intellijidea-ultimate -y --version 2019.2
 choco install eclipse -y --version 4.12
@@ -29,18 +28,6 @@ choco install firefox # temporary for specific training
 
 # tool to show .md-slides
 npm i -g @infosupport/kc-cli
-
-# Remove Java 8 from Path, so Java 11 is used
-$path = [System.Environment]::GetEnvironmentVariable(
-    'PATH',
-    'Machine'
-)
-$path = ($path.Split(';') | Where-Object { $_ -ne 'C:\Program Files\Java\jdk1.8.0_221\bin' }) -join ';'
-[System.Environment]::SetEnvironmentVariable(
-    'PATH',
-    $path,
-    'Machine'
-)
 
 #############################################################################
 # Fix Windows Search (Cortana)
