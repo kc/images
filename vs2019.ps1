@@ -46,7 +46,7 @@ choco install sumatrapdf.install -y # 'sumatrapdf' only installs the cmdline too
 choco install firefox -y
 
 # We need this stuff for the DDAS training
-choco install sql-server-express --version 2017.20190916 -y # SQL Server 2017 Express d.d. sept 2019
+choco install sql-server-express --version 2019.20190106 -y # SQL Server 2019 Express d.d. jan 2020
 choco install sql-server-management-studio --version 15.0.18206.0 -y # 18.4 d.d. nov 2019
 C:\VPC_images\Functions\Execute-SqlCmd.ps1 -sqlFile "C:\VPC_images\CustomScripts\CreateSchoolSampleDatabase.sql"
 
