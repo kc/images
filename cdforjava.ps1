@@ -1,17 +1,17 @@
 choco install adoptopenjdk12 -y --version 12.0.2.10
-choco install intellijidea-ultimate -y --version 2019.2
-choco install eclipse -y --version 4.12
-choco install maven -y --ignore-dependencies --version 3.6.1.20190711 # Ignore JDK8 dependency 
+choco install intellijidea-ultimate -y --version 2019.3.1
+choco install eclipse -y --version 4.14
+choco install maven -y --ignore-dependencies --version 3.6.3   # Ignore JDK8 dependency 
 choco install docker-desktop -y --version 2.1.0.5
-choco install putty.install --version 0.72
+choco install putty.install --version 0.73
 
-choco install googlechrome -y --version 76.0.3809.100
-choco install notepadplusplus -y --version 7.7.1
+choco install googlechrome -y --version 79.0.3945.117
+choco install notepadplusplus -y --version 7.8.2
 choco install 7zip -y --version 19.0
 choco install sumatrapdf.install -y --version 3.1.2
-choco install nodejs.install -y --version 12.9.0
-choco install vscode -y --version 1.37.1
-choco install git -y --version 2.23.0
+choco install nodejs.install -y --version 13.6.0
+choco install vscode -y --version 1.41.1
+choco install git -y --version 2.24.1.2
 
 # tool to show .md-slides
 npm i -g @infosupport/kc-cli
