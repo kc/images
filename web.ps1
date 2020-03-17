@@ -16,6 +16,8 @@ choco install googlechrome -y
 choco install firefox -y
 choco install 7zip -y
 choco install sumatrapdf.install -y
+choco install microsoft-teams -y
+
 
 Set-WindowsExplorerOptions -EnableShowFileExtensions
 if ($env:COMPUTERNAME -match "docent.") {

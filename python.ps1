@@ -13,6 +13,9 @@ choco install pycharm-edu -y
 # Installing Anaconda (python 3.x, v2018.12)
 choco install anaconda3 --params '"/AddToPath"' -y
 
+choco install microsoft-teams -y
+
+
 # Refresh path variables
 refreshenv
 

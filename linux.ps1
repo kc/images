@@ -11,6 +11,7 @@ C:\VPC_images\Functions\Enable-DoNotStartServerManagerAutomaticallyAtLogon.ps1
 #############################################################################
 
 choco install googlechrome -y
+choco install microsoft-teams -y
 
 
 #############################################################################

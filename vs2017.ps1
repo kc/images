@@ -42,6 +42,8 @@ choco install 7zip -y
 choco install googlechrome -y
 choco install sumatrapdf.install -y # 'sumatrapdf' only installs the cmdline tool, therefore use 'sumatrapdf.install'
 choco install firefox -y
+choco install microsoft-teams -y
+
 
 # We need this stuff for the DDAS training
 choco install sql-server-express --version 14.1801.3958.1 -y # SQL Server 2017 Express d.d. apr 2018

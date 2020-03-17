@@ -12,6 +12,7 @@ choco install sumatrapdf.install -y --version 3.1.2
 choco install nodejs.install -y --version 13.6.0
 choco install vscode -y --version 1.41.1
 choco install git -y --version 2.24.1.2
+choco install microsoft-teams -y
 
 # tool to show .md-slides
 npm i -g @infosupport/kc-cli

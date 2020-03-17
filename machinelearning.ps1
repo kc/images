@@ -9,6 +9,8 @@ choco install R.Studio -y
 choco install jdk8 -y
 #choco install scala.install -y -ignoreDependencies
 choco install imagemagick.app -y
+choco install microsoft-teams -y
+
 Install-ChocolateyZipPackage "spark-notebook" "https://s3.eu-central-1.amazonaws.com/spark-notebook/zip/spark-notebook-0.8.3-scala-2.11.8-spark-2.2.2-hadoop-2.7.2.zip?max-keys=100000" "C:\spark"
 
 #############################################################################

@@ -25,6 +25,7 @@ choco install postman -y --version 7.14.0
 choco install vscode -y --version 1.41.1
 
 choco install firefox # temporary for specific training
+choco install microsoft-teams -y
 
 # tool to show .md-slides
 npm i -g @infosupport/kc-cli

@@ -5,6 +5,8 @@ choco install git
 choco install sumatrapdf.install
 choco install xmlspy
 choco install openjdk -y --version 11.0.1
+choco install microsoft-teams -y
+
 
 #############################################################################
 # Fix Windows Search (Cortana)

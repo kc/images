@@ -19,6 +19,7 @@ choco install vscode -y
 choco install googlechrome -y
 choco install 7zip -y
 choco install sumatrapdf.install -y # 'sumatrapdf' only installs the cmdline tool, therefore use 'sumatrapdf.install'
+choco install microsoft-teams -y
 
 #############################################################################
 # Create task bar items
