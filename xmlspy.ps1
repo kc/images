@@ -4,7 +4,7 @@ Install-WindowsFeature Net-Framework-Core # .NET 3.0
 choco install git
 choco install sumatrapdf.install
 choco install xmlspy
-choco install openjdk -y --version 11.0.1
+choco install openjdk -y --version 14.0.1
 choco install microsoft-teams -y
 
 
