@@ -37,7 +37,7 @@ choco install dotnetcore-sdk -y
 choco install vscode -y --execution-timeout=7000
 choco install git -y # Includes git lfs & git credential manager for windows
 choco install nodejs-lts -y
-choco install docker-desktop --version 2.3.0.2 -y
+choco install docker-desktop --version 2.3.0.3 -y
 choco install docker-compose -y 
 choco install ILSpy -y
 choco install 7zip -y
