@@ -2,7 +2,7 @@ choco install adoptopenjdk12 -y --version 12.0.2.10
 choco install intellijidea-ultimate -y --version 2020.1
 choco install eclipse -y --version 4.14
 choco install maven -y --ignore-dependencies --version 3.6.3   # Ignore JDK8 dependency 
-choco install docker-desktop -y --version 2.3.0.3
+choco install docker-desktop -y --version 2.3.0.5
 choco install putty.install --version 0.73
 
 choco install googlechrome -y --version 81.0.4044.129
