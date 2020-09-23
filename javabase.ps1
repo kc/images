@@ -19,7 +19,7 @@ choco install notepadplusplus -y --version 7.8.6
 choco install 7zip -y --version 19.0
 choco install sumatrapdf.install -y --version 3.1.2
 
-choco install googlechrome -y --version 81.0.4044.129
+choco install googlechrome -y --version 85.0.4183.102
 choco install nodejs.install -y --version 14.0.0
 choco install postman -y --version 7.22.1
 choco install vscode -y --version 1.44.2
