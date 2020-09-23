@@ -7,7 +7,7 @@ choco install tomcat -y --version 9.0.24
 choco install sourcetree -y --version 3.3.8
 choco install maven -y --version 3.6.3
 choco install wildfly -y --version 18.0.1
-choco install adoptopenjdk11 -y --version 11.0.5.10
+choco install adoptopenjdk11 -y --version 11.0.8.11
 
 choco install vcredist2013 -y --version 12.0.40660.20180427
 choco install mysql -y --version 8.0.20
