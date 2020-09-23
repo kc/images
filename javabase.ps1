@@ -2,7 +2,7 @@ choco install git -y --version 2.26.2
 choco install soapui -y --version 5.5.0
 choco install scala.install -y -ignoreDependencies --version 2.11.4
 choco install intellijidea-ultimate -y --version 2020.1
-choco install eclipse -y --version 4.14
+choco install eclipse -y --version 4.17
 choco install tomcat -y --version 9.0.24
 choco install sourcetree -y --version 3.3.8
 choco install maven -y --version 3.6.3
