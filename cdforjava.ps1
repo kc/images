@@ -5,7 +5,7 @@ choco install maven -y --ignore-dependencies --version 3.6.3   # Ignore JDK8 dep
 choco install docker-desktop -y --version 2.3.0.5
 choco install putty.install --version 0.73
 
-choco install googlechrome -y --version 81.0.4044.129
+choco install googlechrome -y --version 85.0.4183.102
 choco install notepadplusplus -y --version 7.8.6
 choco install 7zip -y --version 19.0
 choco install sumatrapdf.install -y --version 3.1.2
