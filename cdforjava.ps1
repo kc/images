@@ -6,7 +6,7 @@ choco install docker-desktop -y --version 2.3.0.5
 choco install putty.install --version 0.73
 
 choco install googlechrome -y --version 85.0.4183.102
-choco install notepadplusplus -y --version 7.8.6
+choco install notepadplusplus -y --version 7.8.9
 choco install 7zip -y --version 19.0
 choco install sumatrapdf.install -y --version 3.1.2
 choco install nodejs.install -y --version 14.0.0
