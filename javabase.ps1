@@ -15,7 +15,7 @@ choco install heidisql -y --version 10.2.0.5599
 # Workaround for HeidiSQL so it can connect to MySQL (which changed security)
 mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'"
 
-choco install notepadplusplus -y --version 7.8.6
+choco install notepadplusplus -y --version 7.8.9
 choco install 7zip -y --version 19.0
 choco install sumatrapdf.install -y --version 3.1.2
 
