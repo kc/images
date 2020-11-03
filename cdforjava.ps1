@@ -11,7 +11,7 @@ choco install 7zip -y --version 19.0
 choco install sumatrapdf.install -y --version 3.1.2
 choco install nodejs.install -y --version 14.0.0
 choco install vscode -y --version 1.44.2
-choco install git -y --version 2.28.0
+choco install git -y --version 2.29.2
 choco install microsoft-teams -y
 
 # tool to show .md-slides
