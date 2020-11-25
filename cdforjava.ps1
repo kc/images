@@ -1,17 +1,17 @@
-choco install adoptopenjdk12 -y --version 12.0.2.10
-choco install intellijidea-ultimate -y --version 2020.2
-choco install eclipse -y --version 4.17
+choco install adoptopenjdk12 -y 
+choco install intellijidea-ultimate -y
+choco install eclipse -y
 choco install maven -y --ignore-dependencies --version 3.6.3   # Ignore JDK8 dependency 
-choco install docker-desktop -y --version 2.4.0.0
+choco install docker-desktop -y
 choco install putty.install --version 0.73
 
-choco install googlechrome -y --version 85.0.4183.102
-choco install notepadplusplus -y --version 7.8.9
-choco install 7zip -y --version 19.0
-choco install sumatrapdf.install -y --version 3.1.2
-choco install nodejs.install -y --version 14.0.0
-choco install vscode -y --version 1.44.2
-choco install git -y --version 2.29.2
+choco install googlechrome -y 
+choco install notepadplusplus -y
+choco install 7zip -y 
+choco install sumatrapdf.install -y
+choco install nodejs.install -y
+choco install vscode -y
+choco install git -y 
 choco install microsoft-teams -y
 
 # tool to show .md-slides
