@@ -50,7 +50,7 @@ choco install microsoft-teams -y
 
 # We need this stuff for the DDAS training
 choco install sql-server-express --version 2019.20200409 -y # SQL Server 2019 Express d.d. apr 2020
-choco install sql-server-management-studio --version 15.0.18330.0 -y # 18.4 d.d. apr 2020
+choco install sql-server-management-studio --version 15.0.18386.0 -y # 18.9.2 d.d. jul 2021
 C:\VPC_images\Functions\Execute-SqlCmd.ps1 -sqlFile "C:\VPC_images\CustomScripts\CreateSchoolSampleDatabase.sql"
 
 #############################################################################
