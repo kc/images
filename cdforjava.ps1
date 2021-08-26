@@ -1,7 +1,7 @@
 choco install adoptopenjdk12 -y 
 choco install intellijidea-ultimate -y
 choco install eclipse -y
-choco install maven -y --ignore-dependencies --version 3.6.3   # Ignore JDK8 dependency 
+choco install maven -y --ignore-dependencies   # Ignore JDK8 dependency 
 choco install docker-desktop -y
 choco install putty.install --version 0.73
 
