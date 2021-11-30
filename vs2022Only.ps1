@@ -37,6 +37,9 @@ choco install dotnetcore-sdk -y
 choco install dotnet -y
 choco install vscode -y --execution-timeout=7000
 choco install git -y # Includes git lfs & git credential manager for windows
+choco install azure-cli -y
+choco install azure-functions-core-tools-3 -y
+choco install az.powershell -y
 choco install nodejs-lts -y
 choco install ILSpy -y
 choco install 7zip -y
