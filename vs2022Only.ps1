@@ -14,12 +14,12 @@ Install-WindowsFeature Containers # For Windows Containers
 Install-WindowsFeature Net-Framework-Core # .NET 3.0
 
 #############################################################################
-# Visual Studio 2019 Enterprise: Offline installation using layout directory.
+# Visual Studio 2022 Enterprise: Offline installation using layout directory.
 # 
 # Use below command to create a layout directory for offline installation. 
 # The layout should be included in the cache.vhdx that is copied to the machine from TDS.
 #
-# IMPORTANT: Delete the entire layout directory (K:\visualstudio2019enterprise-layout) before creating a new one.
+# IMPORTANT: Delete the entire layout directory (K:\visualstudio2022enterprise-layout) before creating a new one.
 # IMPORTANT: Make sure the correct version and included workloads is used when creating the layout.
 # 
 # choco install visualstudio2022enterprise --version 117.0.0.0 -y --params "--layout K:\visualstudio2022enterprise-layout --add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Azure --add Microsoft.VisualStudio.Workload.Node --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.Net.Component.4.8.SDK --add Microsoft.Net.Component.4.8.TargetingPack --includeRecommended" --force
