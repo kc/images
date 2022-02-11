@@ -3,7 +3,7 @@ choco install intellijidea-ultimate -y
 choco install eclipse -y
 choco install maven -y --ignore-dependencies   # Ignore JDK8 dependency 
 choco install docker-desktop -y
-choco install putty.install --version 0.73
+choco install putty.install
 
 choco install googlechrome -y 
 choco install notepadplusplus -y
