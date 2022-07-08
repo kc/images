@@ -1,4 +1,4 @@
-choco install adoptopenjdk12 -y 
+choco install openjdk17 -y
 choco install intellijidea-ultimate -y
 choco install eclipse -y
 choco install maven -y --ignore-dependencies   # Ignore JDK8 dependency 
