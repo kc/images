@@ -50,6 +50,8 @@ choco install sumatrapdf.install -y # 'sumatrapdf' only installs the cmdline too
 choco install firefox -y
 choco install microsoft-teams -y
 
+Remove-Item $env:APPDATA\NuGet\nuget.config
+
 
 # We need this stuff for the DDAS training
 choco install sql-server-express --version 2019.20200409 -y # SQL Server 2019 Express d.d. apr 2020
