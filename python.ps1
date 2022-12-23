@@ -25,6 +25,8 @@ choco install microsoft-teams -y
 # Refresh path variables
 refreshenv
 
+conda env create -f pythonai.yaml
+
 
 #############################################################################
 # Fix Windows Search (Cortana)
