@@ -25,7 +25,7 @@ choco install microsoft-teams -y
 # Refresh path variables
 refreshenv
 
-conda env create -f pythonai.yaml
+conda env create -f C:\VPC_Images\pythonai.yaml
 
 
 #############################################################################
