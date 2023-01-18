@@ -50,7 +50,6 @@ choco install sumatrapdf.install -y # 'sumatrapdf' only installs the cmdline too
 choco install firefox -y
 choco install microsoft-teams -y
 
-Remove-Item $env:APPDATA\NuGet\nuget.config
 
 
 # We need this stuff for the DDAS training
@@ -59,6 +58,7 @@ choco install sql-server-management-studio --version 15.0.18424.0 -y # 18.12.1 d
 C:\VPC_images\Functions\Execute-SqlCmd.ps1 -sqlFile "C:\VPC_images\CustomScripts\CreateSchoolSampleDatabase.sql"
 C:\VPC_images\Functions\Execute-SqlCmd.ps1 -sqlFile "C:\VPC_images\CustomScripts\adventureworkslt.sql"
 
+Remove-Item $env:APPDATA\NuGet\nuget.config
 
 #############################################################################
 # Fix Windows Search (Cortana)
