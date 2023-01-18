@@ -78,3 +78,5 @@ foreach($taskBarLink in $taskBarLinks)
 {
     C:\VPC_images\Tools\syspin.exe $taskBarLink c:5386
 }
+
+Remove-Item $env:APPDATA\NuGet\nuget.config
