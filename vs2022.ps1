@@ -70,7 +70,7 @@ C:\VPC_images\Functions\Fix-WindowsSearch.ps1
 #############################################################################
 
 $taskBarLinks = @(
-    ,"${env:ProgramFiles(x86)}\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\devenv.exe"
+    ,"${env:ProgramFiles}\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\devenv.exe"
     ,"${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe"
 )
 
@@ -79,4 +79,3 @@ foreach($taskBarLink in $taskBarLinks)
     C:\VPC_images\Tools\syspin.exe $taskBarLink c:5386
 }
 
-Remove-Item $env:APPDATA\NuGet\nuget.config
