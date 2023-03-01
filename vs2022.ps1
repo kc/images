@@ -22,10 +22,10 @@ Install-WindowsFeature Net-Framework-Core # .NET 3.0
 # IMPORTANT: Delete the entire layout directory (K:\visualstudio2022enterprise-layout) before creating a new one.
 # IMPORTANT: Make sure the correct version and included workloads is used when creating the layout.
 # 
-# choco install visualstudio2022enterprise --version 117.4.5.0 -y --params "--layout K:\visualstudio2022enterprise-layout --add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Azure --add Microsoft.VisualStudio.Workload.Node --add Microsoft.VisualStudio.Workload.NetCrossPlat --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.VisualStudio.Workload.Data --add Microsoft.NetCore.Component.Runtime.3.1 --add Microsoft.NetCore.Component.Runtime.5.0 --add Microsoft.Net.Component.4.8.1.SDK --add Microsoft.Net.Component.4.8.1.TargetingPack --add Microsoft.VisualStudio.Web.Mvc4.ComponentGroup --add Microsoft.VisualStudio.ComponentGroup.ArchitectureTools.Managed --add Microsoft.VisualStudio.Component.AzureDevOps.OfficeIntegration --add Microsoft.VisualStudio.Component.Git --add Microsoft.VisualStudio.Component.DependencyValidation.Enterprise --includeRecommended" --force
+# choco install visualstudio2022enterprise --version 117.5.0.0 -y --params "--layout K:\visualstudio2022enterprise-layout --add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Azure --add Microsoft.VisualStudio.Workload.Node --add Microsoft.VisualStudio.Workload.NetCrossPlat --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.VisualStudio.Workload.Data --add Microsoft.NetCore.Component.Runtime.3.1 --add Microsoft.NetCore.Component.Runtime.5.0 --add Microsoft.Net.Component.4.8.1.SDK --add Microsoft.Net.Component.4.8.1.TargetingPack --add Microsoft.VisualStudio.Web.Mvc4.ComponentGroup --add Microsoft.VisualStudio.ComponentGroup.ArchitectureTools.Managed --add Microsoft.VisualStudio.Component.AzureDevOps.OfficeIntegration --add Microsoft.VisualStudio.Component.Git --add Microsoft.VisualStudio.Component.DependencyValidation.Enterprise --includeRecommended" --force
 #############################################################################
 
-choco install visualstudio2022enterprise --version 117.4.5.0 -y --execution-timeout=7000 `
+choco install visualstudio2022enterprise --version 117.5.0.0 -y --execution-timeout=7000 `
     --params "--bootstrapperPath K:\visualstudio2022enterprise-layout\vs_setup.exe" `
     --ia "--add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Azure --add Microsoft.VisualStudio.Workload.Node --add Microsoft.VisualStudio.Workload.NetCrossPlat --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.VisualStudio.Workload.Data --add Microsoft.NetCore.Component.Runtime.3.1 --add Microsoft.NetCore.Component.Runtime.5.0 --add Microsoft.Net.Component.4.8.1.SDK --add Microsoft.Net.Component.4.8.1.TargetingPack --add Microsoft.VisualStudio.Web.Mvc4.ComponentGroup --add Microsoft.VisualStudio.ComponentGroup.ArchitectureTools.Managed --add Microsoft.VisualStudio.Component.AzureDevOps.OfficeIntegration --add Microsoft.VisualStudio.Component.Git --add Microsoft.VisualStudio.Component.DependencyValidation.Enterprise --includeRecommended"
 
@@ -53,8 +53,8 @@ choco install microsoft-teams -y
 
 
 # We need this stuff for the DDAS training
-choco install sql-server-express --version 2019.20200409 -y # SQL Server 2019 Express d.d. apr 2020
-choco install sql-server-management-studio --version 15.0.18424.0 -y # 18.12.1 d.d. aug 2022
+choco install sql-server-express-adv --version 16.0.1000.6 -y # SQL Server 2022 Express Adv d.d. feb 2023
+choco install sql-server-management-studio --version 19.0.20200.0 -y # 19.x d.d. feb 2023
 C:\VPC_images\Functions\Execute-SqlCmd.ps1 -sqlFile "C:\VPC_images\CustomScripts\CreateSchoolSampleDatabase.sql"
 C:\VPC_images\Functions\Execute-SqlCmd.ps1 -sqlFile "C:\VPC_images\CustomScripts\adventureworkslt.sql"
 
