@@ -7,7 +7,7 @@ choco install tomcat -y
 choco install sourcetree -y 
 choco install maven -y
 choco install wildfly -y 
-choco install openjdk17 -y
+choco install openjdk -y
 choco install docker-desktop -y
 
 choco install vcredist2013 -y --version 12.0.40660.20180427
