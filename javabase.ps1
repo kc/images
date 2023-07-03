@@ -2,6 +2,7 @@ choco install git -y
 choco install soapui -y
 choco install scala.install -y -ignoreDependencies
 choco install intellijidea-ultimate -y
+choco install androidstudio -y
 choco install eclipse -y 
 choco install tomcat -y 
 choco install sourcetree -y 
