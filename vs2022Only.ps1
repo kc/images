@@ -11,7 +11,6 @@ C:\VPC_images\Functions\Enable-DoNotStartServerManagerAutomaticallyAtLogon.ps1
 #############################################################################
 
 Install-WindowsFeature Containers # For Windows Containers
-Install-WindowsFeature Net-Framework-Core # .NET 3.0
 
 #############################################################################
 # Visual Studio 2022 Enterprise: Offline installation using layout directory.
