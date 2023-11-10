@@ -19,6 +19,8 @@ choco install git -y
 
 choco install nodejs -y
 
+choco install docker-desktop -y
+
 choco install microsoft-teams -y
 
 
