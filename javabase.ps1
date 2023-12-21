@@ -9,7 +9,7 @@ choco install sourcetree -y
 choco install maven -y
 choco install wildfly -y 
 choco install openjdk -y
-choco install docker-desktop -y
+choco install docker-desktop --version 4.16.0 -y
 
 choco install vcredist2013 -y --version 12.0.40660.20180427
 choco install mysql -y 

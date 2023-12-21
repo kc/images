@@ -40,7 +40,7 @@ choco install azure-cli -y
 choco install azure-functions-core-tools --params "/x64:true" -y
 choco install az.powershell -y
 choco install nodejs-lts -y
-choco install docker-desktop -y
+choco install docker-desktop --version 4.16.0 -y
 choco install docker-compose -y 
 choco install ILSpy -y
 choco install 7zip -y

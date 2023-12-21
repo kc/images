@@ -19,7 +19,7 @@ choco install git -y
 
 choco install nodejs -y
 
-choco install docker-desktop -y
+choco install docker-desktop --version 4.16.0 -y
 
 choco install microsoft-teams -y
 
