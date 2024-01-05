@@ -13,7 +13,7 @@ choco install python -y
 choco install pycharm-edu -y
 
 # Installing Anaconda (python 3.x, v2018.12)
-choco install anaconda3 --params '"/AddToPath"' -y
+choco install anaconda3 --params '"/JustMe" "/AddToPath"' -y
 
 choco install git -y
 
