@@ -9,10 +9,10 @@ Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowFileEx
 
 choco install python -y
 
-# Installing pycharm edu (18.3)
-choco install pycharm-edu -y
+# Installing pycharm community
+choco install pycharm-community -y
 
-# Installing Anaconda (python 3.x, v2018.12)
+# Installing Anaconda (python 3.x)
 choco install anaconda3 --params '"/JustMe" "/AddToPath"' -y
 
 choco install git -y
