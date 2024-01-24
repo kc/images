@@ -4,6 +4,7 @@ choco install git
 choco install sumatrapdf.install
 choco install xmlspy
 choco install openjdk -y --version 14.0.1
+choco install nodejs -y
 choco install microsoft-teams -y
 
 
