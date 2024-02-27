@@ -19,11 +19,11 @@ choco install vscode -y
 choco install azure-cli -y
 choco install azure-functions-core-tools --params "/x64:true" -y
 choco install az.powershell -y
-choco install bicep - y
+choco install bicep -y
 
 choco install azurefunctions-vscode -y
 choco install vscode-csharp -y
-choco install vscode-powershell - y
+choco install vscode-powershell -y
 
 choco install googlechrome -y
 choco install 7zip -y
