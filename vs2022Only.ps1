@@ -32,8 +32,7 @@ choco install visualstudio2022enterprise --version 117.9.0.0 -y --execution-time
 # Remaining software installations
 #############################################################################
 
-choco install dotnetcore-sdk -y
-choco install dotnet -y
+choco install dotnet-sdk -y
 choco install vscode -y --execution-timeout=7000
 choco install git -y # Includes git lfs & git credential manager for windows
 choco install azure-cli -y
