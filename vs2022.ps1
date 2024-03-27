@@ -32,8 +32,7 @@ choco install visualstudio2022enterprise --version 117.9.0.0 -y --execution-time
 # Remaining software installations
 #############################################################################
 
-choco install dotnetcore-sdk -y
-choco install dotnet -y
+choco install dotnet-sdk -y
 choco install vscode -y --execution-timeout=7000
 choco install git -y # Includes git lfs & git credential manager for windows
 choco install azure-cli -y
@@ -53,7 +52,7 @@ choco install microsoft-teams -y
 
 # We need this stuff for the DDAS training
 choco install sql-server-express-adv --version 16.0.1000.6 -y # SQL Server 2022 Express Adv d.d. feb 2023
-choco install sql-server-management-studio --version 19.3.4 -y # 19.3 d.d. mrt 2024
+choco install sql-server-management-studio --version 20.0.70 -y # 20.0 d.d. mrt 2024
 C:\VPC_images\Functions\Execute-SqlCmd.ps1 -sqlFile "C:\VPC_images\CustomScripts\CreateSchoolSampleDatabase.sql"
 C:\VPC_images\Functions\Execute-SqlCmd.ps1 -sqlFile "C:\VPC_images\CustomScripts\adventureworkslt.sql"
 
