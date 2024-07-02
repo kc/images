@@ -46,7 +46,9 @@ choco install sumatrapdf.install -y # 'sumatrapdf' only installs the cmdline too
 choco install firefox -y
 choco install microsoft-teams -y
 
-Remove-Item $env:APPDATA\NuGet\nuget.config
+# Remove-Item $env:APPDATA\NuGet\nuget.config
+
+dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
 
 #############################################################################
 # Fix Windows Search (Cortana)
