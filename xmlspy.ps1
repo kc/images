@@ -5,7 +5,13 @@ choco install sumatrapdf.install
 choco install xmlspy
 choco install openjdk -y --version 14.0.1
 choco install nodejs -y
-choco install microsoft-teams -y
+# choco install microsoft-teams -y
+choco install webview2-runtime -y
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowAllTrustedApps" /d "1"
+
+Dism /Online /Add-ProvisionedAppxPackage /PackagePath:"K:\microsoft-teams-new\MSTeams-x64.msix" /SkipLicense
+
 
 
 #############################################################################
