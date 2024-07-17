@@ -9,7 +9,11 @@ choco install R.Studio -y
 choco install jdk8 -y
 #choco install scala.install -y -ignoreDependencies
 choco install imagemagick.app -y
-choco install microsoft-teams -y
+choco install webview2-runtime -y
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowAllTrustedApps" /d "1"
+
+Dism /Online /Add-ProvisionedAppxPackage /PackagePath:"K:\microsoft-teams-new\MSTeams-x64.msix" /SkipLicense
 
 Install-ChocolateyZipPackage "spark-notebook" "https://s3.eu-central-1.amazonaws.com/spark-notebook/zip/spark-notebook-0.8.3-scala-2.11.8-spark-2.2.2-hadoop-2.7.2.zip?max-keys=100000" "C:\spark"
 
