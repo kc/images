@@ -57,7 +57,7 @@ Dism /Online /Add-ProvisionedAppxPackage /PackagePath:"K:\microsoft-teams-new\MS
 
 # We need this stuff for the DDAS training
 choco install sql-server-express-adv --version 16.0.1000.6 -y # SQL Server 2022 Express Adv d.d. feb 2023
-choco install sql-server-management-studio --version 20.1.10 -y # 20.1 d.d. apr 2024
+choco install sql-server-management-studio --version 20.2.30 -y # 20.2 d.d. sept 2024
 C:\VPC_images\Functions\Execute-SqlCmd.ps1 -sqlFile "C:\VPC_images\CustomScripts\CreateSchoolSampleDatabase.sql"
 C:\VPC_images\Functions\Execute-SqlCmd.ps1 -sqlFile "C:\VPC_images\CustomScripts\adventureworkslt.sql"
 
