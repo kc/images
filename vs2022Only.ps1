@@ -36,7 +36,7 @@ choco install dotnet-sdk -y
 choco install vscode -y --execution-timeout=7000
 choco install git -y # Includes git lfs & git credential manager for windows
 choco install azure-cli -y
-choco install azure-functions-core-tools --params "/x64:true" --version 4.0.5455 -y
+choco install azure-functions-core-tools --params "/x64:true" -y
 choco install az.powershell -y
 choco install nodejs-lts -y
 choco install ILSpy -y
