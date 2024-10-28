@@ -27,7 +27,7 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUn
 
 Dism /Online /Add-ProvisionedAppxPackage /PackagePath:"K:\microsoft-teams-new\MSTeams-x64.msix" /SkipLicense
 
-Install-Module -Name PSPKI -Scope CurrentUser -Confirm
+Install-Module -Name PSPKI -Scope AllUsers -Force
 
 # Refresh path variables
 refreshenv
