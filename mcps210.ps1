@@ -12,7 +12,7 @@ C:\VPC_images\Functions\Enable-DoNotStartServerManagerAutomaticallyAtLogon.ps1
 
 choco install git -y # Includes git lfs & git credential manager for windows
 choco install nodejs-lts -y # Used to serve git interactive cheat sheet (static website)
-choco install dotnet -y
+choco install dotnet-sdk -y
 
 choco install vscode -y
 
