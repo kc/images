@@ -12,6 +12,9 @@ C:\VPC_images\Functions\Enable-DoNotStartServerManagerAutomaticallyAtLogon.ps1
 
 Install-WindowsFeature Containers # For Windows Containers
 
+choco install dotnet-sdk -y
+
+
 #############################################################################
 # Visual Studio 2026 Enterprise: Offline installation using layout directory.
 # 
@@ -32,7 +35,6 @@ choco install visualstudio2026enterprise --version 118.0.0.0 -y --execution-time
 # Remaining software installations
 #############################################################################
 
-choco install dotnet-sdk -y
 choco install vscode -y --execution-timeout=7000
 choco install git -y # Includes git lfs & git credential manager for windows
 choco install azure-cli -y
